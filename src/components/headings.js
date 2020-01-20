@@ -19,14 +19,7 @@ class Hoverable extends React.Component {
   }
 }
 
-const Heading = ({
-  headingFirst,
-  headingMiddle,
-  headingEnd,
-  size,
-  speed,
-  children,
-}) => {
+const Heading = ({ headingFirst, size, speed }) => {
   const [pageIsVisible, setPageIsVisible] = useState(true)
   // const [speed, setSpeed] = useState(30)
 
@@ -37,29 +30,24 @@ const Heading = ({
   return (
     <Hoverable>
       {hovered => (
-        <div>
-          {hovered ? (
-            <PageVisibility onChange={handleVisibilityChange}>
-              {pageIsVisible && (
-                <Ticker
-                  offset="-20"
-                  speed={speed * 2}
-                  className="hoverable"
-                  mode="chain"
+        <PageVisibility onChange={handleVisibilityChange}>
+          {pageIsVisible && (
+            <Ticker
+              offset="-20"
+              speed={hovered ? speed * 2 : speed}
+              className="hoverable"
+              mode="chain"
+            >
+              {() => (
+                <div
+                  className="headingContent"
+                  // style={"display: inline-block"}
+                  // className={styles.heading}
                 >
-                  {() => (
-                    <div
-                      className="headingContent"
-                      // style={"display: inline-block"}
-                      // className={styles.heading}
-                    >
-                      <span
-                        className="headingContent"
-                        style={{ fontSize: size }}
-                      >
-                        {headingFirst}
-                      </span>
-                      {/* <span
+                  <span className="headingContent" style={{ fontSize: size }}>
+                    {headingFirst}
+                  </span>
+                  {/* <span
                         className={styles.headingContent}
                         style={{ fontSize: size, fontStyle: "italic" }}
                       >
@@ -72,51 +60,11 @@ const Heading = ({
                         {" "}
                         {headingEnd}
                       </span> */}
-                    </div>
-                  )}
-                </Ticker>
+                </div>
               )}
-            </PageVisibility>
-          ) : (
-            <PageVisibility onChange={handleVisibilityChange}>
-              {pageIsVisible && (
-                <Ticker
-                  offset="-20"
-                  speed={speed}
-                  className="hoverable"
-                  mode="chain"
-                >
-                  {() => (
-                    <div
-                      className="headingContent"
-                      // style={"display: inline-block"}
-                      // className={styles.heading}
-                    >
-                      <span
-                        className="headingContent"
-                        style={{ fontSize: size }}
-                      >
-                        {headingFirst}
-                      </span>
-                      {/* <span
-                        className={styles.headingContent}
-                        style={{ fontSize: size, fontStyle: "normal" }}
-                      >
-                        {headingMiddle}
-                      </span>
-                      <span
-                        className={styles.headingContent}
-                        style={{ fontSize: size }}
-                      >
-                        {headingEnd}
-                      </span> */}
-                    </div>
-                  )}
-                </Ticker>
-              )}
-            </PageVisibility>
+            </Ticker>
           )}
-        </div>
+        </PageVisibility>
       )}
     </Hoverable>
   )
