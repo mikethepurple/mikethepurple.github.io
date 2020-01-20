@@ -1,8 +1,123 @@
+@font-face {
+  font-family: "RobotoRegular";
+  src: url("../fonts/Roboto-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoBold";
+  src: url("../fonts/Roboto-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "RobotoCondensedBold";
+  src: url("../fonts/RobotoCondensed-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-  background-color: #fff;
-  font-size: 30vh;
+  /* background-color: #353535; */
+  /* font-size: 30vh; */
 }
 
 h1 {
   /* margin-bottom: 0; */
 }
+
+.topmenu {
+  /* display: inline-block; */
+  top: 0;
+  width: 100%;
+  background-color: white;
+  /* position: fixed; */
+}
+
+.noscroll {
+  overflow: hidden;
+}
+
+.mainContent {
+  /* z-index: -1; */
+  margin-top: 10vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolioLinks {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "RobotoBold";
+  font-weight: normal;
+  overflow: hidden;
+  font-size: 16vw;
+  text-transform: uppercase;
+}
+
+.portfolioLinks a {
+  margin-left: -1vw;
+  text-decoration: none;
+  font-family: "RobotoCondensedBold";
+  margin-block-end: 2vh;
+  line-height: 0.9;
+  color: #353535;
+}
+
+.portfolioLinks a:hover {
+  color: #0057ff;
+}
+
+.Me {
+  position: fixed;
+  top: 0vh;
+  left: 2%;
+  display: flex;
+  flex-direction: column;
+  /* display: inline-block; */
+  color: #353535;
+  font-family: "RobotoBold";
+  font-weight: normal;
+  margin-top: 2vh;
+  margin-left: 2%;
+  font-size: 7vh;
+  line-height: 0.98;
+  text-decoration: none;
+}
+
+.Me:hover {
+  color: #0057ff;
+}
+
+.heading {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-family: "RobotoCondensedBold";
+  font-style: normal;
+  font-weight: normal;
+  color: #353535;
+  /* overflow-wrap: anywhere; */
+  /* width: 200px; */
+  white-space: pre;
+}
+
+.headingContent {
+  margin-block-end: 3vh;
+  line-height: 0.8;
+}
+
+.heading:hover {
+  color: #0057ff;
+  font-style: italic;
+}
+
+/* .hoverable:hover {
+  color: #0057ff;
+} */

@@ -1,60 +1,124 @@
-import React from "react"
 import styles from "../styles/headings.module.css"
 import Ticker from "react-ticker"
+import PageVisibility from "react-page-visibility"
+import React, { useState } from "react"
+import ReactDOM from "react-dom"
 
-const Heading288 = ({ headingText }) => (
-  <Ticker offset="-20" speed={30}>
-    {() => (
-      <div className={styles.heading}>
-        <p className={styles.Heading288}>{headingText}</p>
+class Hoverable extends React.Component {
+  state = { hovered: false }
+  render() {
+    return (
+      <div
+        className="heading"
+        onMouseEnter={() => this.setState({ hovered: true })}
+        onMouseLeave={() => this.setState({ hovered: false })}
+      >
+        {this.props.children(this.state.hovered)}
       </div>
-    )}
-  </Ticker>
-)
+    )
+  }
+}
 
-const Heading200 = ({ headingText }) => (
-  <Ticker offset="-200" speed={10}>
-    {() => (
-      <div className={styles.heading}>
-        <p className={styles.Heading200}>{headingText}</p>
-      </div>
-    )}
-  </Ticker>
-)
+const Heading = ({
+  headingFirst,
+  headingMiddle,
+  headingEnd,
+  size,
+  speed,
+  children,
+}) => {
+  const [pageIsVisible, setPageIsVisible] = useState(true)
+  // const [speed, setSpeed] = useState(30)
 
-const Heading150 = ({ headingText }) => (
-  <Ticker offset="-60" speed={5}>
-    {() => (
-      <div className={styles.heading}>
-        <p className={styles.Heading150}>{headingText}</p>
-      </div>
-    )}
-  </Ticker>
-)
+  const handleVisibilityChange = isVisible => {
+    setPageIsVisible(isVisible)
+  }
 
-const Heading120 = ({ headingText }) => (
-  <Ticker offset="0" speed={10}>
-    {() => (
-      <div className={styles.heading}>
-        <p className={styles.Heading120}>{headingText}</p>
-      </div>
-    )}
-  </Ticker>
-)
-
-const Heading100 = ({ headingText }) => (
-  <Ticker offset="0" speed={7}>
-    {() => (
-      <div className={styles.heading}>
-        <p className={styles.Heading100}>{headingText}</p>
-      </div>
-    )}
-  </Ticker>
-)
-
-export { Heading288 }
-export { Heading200 }
-export { Heading150 }
-export { Heading120 }
-export { Heading100 }
-// export { Moving }
+  return (
+    <Hoverable>
+      {hovered => (
+        <div>
+          {hovered ? (
+            <PageVisibility onChange={handleVisibilityChange}>
+              {pageIsVisible && (
+                <Ticker
+                  offset="-20"
+                  speed={speed * 2}
+                  className="hoverable"
+                  mode="chain"
+                >
+                  {() => (
+                    <div
+                      className="headingContent"
+                      // style={"display: inline-block"}
+                      // className={styles.heading}
+                    >
+                      <span
+                        className="headingContent"
+                        style={{ fontSize: size }}
+                      >
+                        {headingFirst}
+                      </span>
+                      {/* <span
+                        className={styles.headingContent}
+                        style={{ fontSize: size, fontStyle: "italic" }}
+                      >
+                        {headingMiddle}
+                      </span>
+                      <span
+                        className={styles.headingContent}
+                        style={{ fontSize: size }}
+                      >
+                        {" "}
+                        {headingEnd}
+                      </span> */}
+                    </div>
+                  )}
+                </Ticker>
+              )}
+            </PageVisibility>
+          ) : (
+            <PageVisibility onChange={handleVisibilityChange}>
+              {pageIsVisible && (
+                <Ticker
+                  offset="-20"
+                  speed={speed}
+                  className="hoverable"
+                  mode="chain"
+                >
+                  {() => (
+                    <div
+                      className="headingContent"
+                      // style={"display: inline-block"}
+                      // className={styles.heading}
+                    >
+                      <span
+                        className="headingContent"
+                        style={{ fontSize: size }}
+                      >
+                        {headingFirst}
+                      </span>
+                      {/* <span
+                        className={styles.headingContent}
+                        style={{ fontSize: size, fontStyle: "normal" }}
+                      >
+                        {headingMiddle}
+                      </span>
+                      <span
+                        className={styles.headingContent}
+                        style={{ fontSize: size }}
+                      >
+                        {headingEnd}
+                      </span> */}
+                    </div>
+                  )}
+                </Ticker>
+              )}
+            </PageVisibility>
+          )}
+        </div>
+      )}
+    </Hoverable>
+  )
+}
+export { Heading }
