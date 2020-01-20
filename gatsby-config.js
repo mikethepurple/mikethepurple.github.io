@@ -9,6 +9,7 @@ module.exports = {
     title: `me`,
   },
   plugins: [
+    `gatsby-transformer-remark`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-netlify-cms`,
     {
@@ -21,6 +22,13 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `src`,
+        path: `${__dirname}/src/`,
       },
     },
   ],
