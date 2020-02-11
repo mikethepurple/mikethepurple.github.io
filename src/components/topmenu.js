@@ -12,9 +12,9 @@ import { useState } from "react"
 function App() {
   const [open, setOpen] = useState(false)
   return (
-    <div className="topmenu" style={{ fontWeight: "bold" }}>
+    <div className="topmenu">
       <a className="Me" href="/">
-        <img src="../images/me.png" />
+        <img src="https://raw.githubusercontent.com/mikethepurple/mikethepurple.github.io/master-source/src/images/me.png" />
       </a>
       <div>
         <Burger className="burger" open={open} setOpen={setOpen} />
