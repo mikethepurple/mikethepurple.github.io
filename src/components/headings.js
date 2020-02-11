@@ -3,15 +3,17 @@ import Ticker from "react-ticker"
 import PageVisibility from "react-page-visibility"
 import React, { useState } from "react"
 import ReactDOM from "react-dom"
+import { Router, Route, Link } from "react-router"
 
 class Hoverable extends React.Component {
   state = { hovered: false }
   render() {
     return (
       <div
-        className="heading"
-        onMouseEnter={() => this.setState({ hovered: true })}
+        // className="heading"
+        onMouseOver={() => this.setState({ hovered: true })}
         onMouseLeave={() => this.setState({ hovered: false })}
+        onClick={() => this.setState({ hovered: true })}
       >
         {this.props.children(this.state.hovered)}
       </div>
@@ -32,6 +34,7 @@ const Heading = ({ headingFirst, size, speed }) => {
       {hovered => (
         <PageVisibility onChange={handleVisibilityChange}>
           {pageIsVisible && (
+            // <Link>
             <Ticker
               offset="-20"
               speed={hovered ? speed * 2 : speed}
@@ -63,10 +66,11 @@ const Heading = ({ headingFirst, size, speed }) => {
                 </div>
               )}
             </Ticker>
+            // </Link>
           )}
         </PageVisibility>
       )}
     </Hoverable>
   )
 }
-export { Heading }
+export default Heading

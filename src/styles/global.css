@@ -1,25 +1,150 @@
 @font-face {
   font-family: "RobotoRegular";
-  src: url("../fonts/Roboto-Regular.ttf");
+  src: url("../fonts/roboto-regular-webfont.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RobotoBold";
-  src: url("../fonts/Roboto-Bold.ttf");
+  src: url("../fonts/roboto-bold-webfont.woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "RobotoCondensedBold";
-  src: url("../fonts/RobotoCondensed-Bold.ttf");
+  src: url("../fonts/robotocondensed-bold-webfont.woff2");
   font-weight: normal;
   font-style: normal;
 }
 
-html {
+/* The work below, CSSBox, is released under the Creative Commons
+   Attribution-ShareAlike 4.0 license and is available on
+   https://github.com/TheLastProject/CSSBox. You are not required to add
+   additional credit to your website, just leave the above text in this file */
+div.cssbox {
+  /* object-fit: cover; */
+  height: 25vw;
+  /* width: 33%; */
+}
+
+a:active {
+  color: white !important;
+}
+
+.imageWrapper {
+  display: inline-block;
+  width: 40%;
+  text-decoration: none;
+  overflow: hidden;
+  color: #353535;
+  /* height: 25vw; */
+  vertical-align: top;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+
+/* div.cssbox a {
+  width: 80%;
+} */
+
+span.cssbox_full {
+  z-index: 999;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+  transition: opacity 0.5s linear;
+}
+
+span.cssbox_full img {
+  position: fixed;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px black;
+}
+
+a.cssbox_close,
+a.cssbox_prev,
+a.cssbox_next {
+  z-index: 999;
+  position: fixed;
+  text-decoration: none;
+  visibility: hidden;
+  color: #353535;
+  font-size: 36px;
+}
+
+a.cssbox_close:hover,
+a.cssbox_prev:hover,
+a.cssbox_next:hover {
+  color: #0057ff;
+}
+
+a.cssbox_close {
+  top: 1%;
+  right: 1%;
+}
+
+a.cssbox_close::after {
+  content: "\00d7";
+}
+
+a.cssbox_prev,
+a.cssbox_next {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+a.cssbox_prev {
+  left: 5%;
+}
+
+a.cssbox_next {
+  right: 5%;
+}
+
+a:target ~ a.cssbox_close,
+a:target ~ a.cssbox_prev,
+a:target ~ a.cssbox_next {
+  visibility: visible;
+}
+
+.cssbox_thumb {
+  /* position: relative; */
+  /* object-fit: cover; */
+  /* float: left; */
+  /* width: 50%; */
+  /* height: 50%; */
+  height: 60%;
+  width: 60%;
+  object-fit: cover;
+}
+
+a:target > img.cssbox_thumb + span.cssbox_full {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+}
+/* This is the end of CSSBox */
+
+html,
+body {
+  /* height: 100%;
+  margin: 0; */
   /* background-color: #353535; */
   /* font-size: 30vh; */
 }
@@ -34,10 +159,15 @@ h1 {
   width: 100%;
   background-color: white;
   /* position: fixed; */
+  z-index: 3;
 }
 
 .noscroll {
   overflow: hidden;
+}
+
+.ticker {
+  z-index: -100;
 }
 
 .mainContent {
@@ -72,6 +202,51 @@ h1 {
   color: #0057ff;
 }
 
+.portfolioBlock {
+  display: inline-block;
+  width: 33%;
+  text-decoration: none;
+  overflow: hidden;
+  color: #353535;
+  height: 25vw;
+  vertical-align: top;
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+
+.portfolioBlock:hover {
+  color: #0057ff;
+}
+
+.burger:hover {
+  color: #0057ff;
+}
+
+.portfolioGrid {
+  margin-top: 15vh;
+}
+
+.gridHeading {
+  margin-block-end: 0px;
+  /* margin-block-start: 0px; */
+  text-decoration: none;
+  font-family: "RobotoCondensedBold";
+  font-size: 4.5vw;
+  width: 80%;
+  /* height: 57px; */
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+.gridText {
+  font-family: "RobotoRegular";
+
+  font-size: 1.96875vw;
+  width: 75%;
+  margin-top: 1.4vw;
+  line-height: 1.1;
+}
+
 .Me {
   position: fixed;
   top: 0vh;
@@ -87,6 +262,7 @@ h1 {
   font-size: 7vh;
   line-height: 0.98;
   text-decoration: none;
+  z-index: 3;
 }
 
 .Me:hover {
@@ -106,6 +282,7 @@ h1 {
   /* overflow-wrap: anywhere; */
   /* width: 200px; */
   white-space: pre;
+  cursor: pointer;
 }
 
 .headingContent {
@@ -118,6 +295,131 @@ h1 {
   font-style: italic;
 }
 
+.portfolioItem {
+  position: absolute;
+  top: 100vh;
+  width: 100%;
+}
+
+.custom-block-heading {
+  width: 100%;
+  margin-left: -1vh;
+  font-size: 8.3vw;
+  font-family: "RobotoCondensedBold";
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: #353535;
+  margin-block-end: 4vh;
+}
+
+.custom-block {
+  margin-left: 0;
+  text-decoration: none;
+  text-align: left;
+  z-index: -1;
+}
+
+.gatsby-resp-image-wrapper {
+  overflow: !important;
+  margin-left: 0 !important;
+  /* margin-right: 0 !important; */
+  /* display: flex; */
+  height: 60% !important;
+  width: 80% !important;
+  object-fit: cover !important;
+}
+
+.gatsby-resp-image-image {
+  object-fit: cover;
+}
+
+.image {
+  /* left: 0px; */
+  align-self: left;
+  margin-left: 0px;
+  /* float: left; */
+  height: 60%;
+  width: 80%;
+  object-fit: cover;
+}
+
+.custom-block-body {
+  font-family: "RobotoRegular";
+  font-size: 2.5vw;
+}
+
+.imageGrid {
+}
+
+.custom-block-body p {
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+.scrollRibbon {
+  font-family: "RobotoRegular" !important;
+  color: #0057ff !important;
+  position: fixed;
+  bottom: 0vh;
+  width: 100%;
+  margin-block-end: -10;
+  cursor: default;
+  line-height: 0.9;
+  height: 2.3vh;
+  z-index: -2;
+}
+
+.scrollCheat {
+  /* position: absolute; */
+  flex-shrink: 0;
+  /* bottom: 0; */
+  height: 3vh;
+  background-color: white;
+  width: 100%;
+  z-index: 20;
+}
+
+.portfolioWrapper {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* height: 100%; */
+}
+
+.portfolioContent {
+  width: 66.8%;
+}
+
+.portfolioTitle {
+  width: 100%;
+  top: 30vh;
+  position: absolute;
+  /* height: 50vh; */
+  margin-top: 10vh;
+  line-height: 1.4;
+  z-index: -2;
+  margin-top: 0;
+  /* overflow-y: visible; */
+  /* font-family: "RobotoCondensedBold"; */
+}
+
+.overlayText {
+  z-index: 50;
+}
+
+.overlayText div {
+  visibility: hidden;
+}
+
+.overlayText:hover div {
+  visibility: visible;
+}
+
+.portfolioTitle div {
+  height: 40vh;
+  overflow-y: visible;
+  line-height: 1.4;
+  margin-top: 2vh;
+}
 /* .hoverable:hover {
   color: #0057ff;
 } */

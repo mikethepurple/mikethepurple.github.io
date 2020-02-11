@@ -3,12 +3,14 @@ import React from "react"
 import { Link } from "gatsby"
 import { Burger, Menu } from "."
 
-function App({ headingText, mainText }) {
+function App({ link, headingText, mainText }) {
   return (
-    <div className="portfolioBlock">
-      <p className="gridHeading">{headingText}</p>
-      <p сlassName="gridText"> {mainText}</p>
-    </div>
+    <Link to={link} className="portfolioBlock">
+      <div>
+        <p className="gridHeading">{headingText}</p>
+        <p className="gridText">{mainText}</p>
+      </div>
+    </Link>
   )
 }
 

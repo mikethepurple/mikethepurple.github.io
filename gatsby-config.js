@@ -9,7 +9,36 @@ module.exports = {
     title: `me`,
   },
   plugins: [
-    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+            },
+          },
+          {
+            resolve: "gatsby-remark-custom-blocks",
+            options: {
+              blocks: {
+                portfolioParagraph: {
+                  classes: "portfolioParagraph",
+                  title: "optional",
+                },
+                image: {
+                  classes: "image",
+                  title: "optional",
+                },
+              },
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-emotion`,
     `gatsby-plugin-netlify-cms`,
     {
@@ -29,6 +58,12 @@ module.exports = {
       options: {
         name: `src`,
         path: `${__dirname}/src/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/images`,
       },
     },
   ],

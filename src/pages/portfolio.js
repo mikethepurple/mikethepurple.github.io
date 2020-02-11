@@ -3,12 +3,14 @@ import { Link, graphql } from "gatsby"
 
 // import { css } from "@emotion/core"
 // import { rhythm } from "../utils/typography"
+import PortfolioBlock from "../components/portfolioblock"
 import Topmenu from "../components/topmenu"
 export default ({ data }) => {
   console.log(data)
   return (
     <div>
       <Topmenu />
+
       <div className="portfolioLinks">
         <a href="">
           <span role="img" aria-label="EVERYTHING"></span>
@@ -36,20 +38,17 @@ export default ({ data }) => {
         </a>
         <a href="/">
           <span role="img" aria-label="NOTHING"></span>
-          СOPY
+          COPY
         </a>
       </div>
-      <div>
-        <h4>{data.allMarkdownRemark.totalCount} Posts</h4>
+      <div className="portfolioGrid">
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <div key={node.id}>
-            <Link to={node.fields.slug}>
-              <h3>
-                {node.frontmatter.title} <span>— {node.frontmatter.date}</span>
-              </h3>
-              <p>{node.excerpt}</p>
-            </Link>
-          </div>
+          <PortfolioBlock
+            key={node.id}
+            link={node.fields.slug}
+            headingText={node.frontmatter.title}
+            mainText={node.excerpt}
+          />
         ))}
       </div>
     </div>

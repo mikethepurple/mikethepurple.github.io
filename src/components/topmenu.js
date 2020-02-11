@@ -17,7 +17,7 @@ function App() {
         <p className="Me">me</p>
       </Link>
       <div>
-        <Burger open={open} setOpen={setOpen} />
+        <Burger className="burger" open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />
       </div>
       {/* <Burger></Burger> */}

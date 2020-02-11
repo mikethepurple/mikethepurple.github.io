@@ -18,6 +18,10 @@ export const StyledBurger = styled.button`
     outline: none;
   }
 
+  &:hover {
+    color: #0057ff;
+  }
+
   div {
     width: 5vh;
     height: 0.5vh;
