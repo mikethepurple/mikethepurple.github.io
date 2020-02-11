@@ -13,9 +13,9 @@ function App() {
   const [open, setOpen] = useState(false)
   return (
     <div className="topmenu" style={{ fontWeight: "bold" }}>
-      <Link to={`/`} style={{ textDecoration: "none" }}>
-        <p className="Me">me</p>
-      </Link>
+      <a className="Me" href="/">
+        <img src="../images/me.png" />
+      </a>
       <div>
         <Burger className="burger" open={open} setOpen={setOpen} />
         <Menu open={open} setOpen={setOpen} />

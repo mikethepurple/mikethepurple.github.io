@@ -4,6 +4,7 @@ import Layout from "../components/topmenu"
 import Heading from "../components/headings.js"
 import ScrollRibbon from "../components/scrollribbon"
 // import { useBottomScrollListener } from 'react-bottom-scroll-listener';
+import SideMenu from "../components/sidemenu"
 
 export default ({ data }) => {
   const post = data.markdownRemark
@@ -31,7 +32,6 @@ export default ({ data }) => {
               {/* {post.frontmatter.title} */}
             </Heading>
           </div>
-          <ScrollRibbon id="scroll"></ScrollRibbon>
           <div className="portfolioItem">
             <div
               className="portfolioContent"
@@ -39,6 +39,13 @@ export default ({ data }) => {
             />
             <div className="scrollCheat"></div>
           </div>
+          <div className="scrollRibbon heading">
+            <Heading headingFirst="SCROLL " size="3vh" speed="30" />
+          </div>
+          <SideMenu
+            title={post.frontmatter.title}
+            tags={post.frontmatter.type}
+          ></SideMenu>
         </div>
       </div>
     </div>

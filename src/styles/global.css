@@ -26,7 +26,7 @@
 div.cssbox {
   /* object-fit: cover; */
   height: 25vw;
-  /* width: 33%; */
+  /* width: %; */
 }
 
 a:active {
@@ -35,7 +35,7 @@ a:active {
 
 .imageWrapper {
   display: inline-block;
-  width: 40%;
+  width: 49.5%;
   text-decoration: none;
   overflow: hidden;
   color: #353535;
@@ -74,7 +74,7 @@ span.cssbox_full img {
   left: 50%;
   margin-right: -50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px black;
+  /* box-shadow: 0 0 20px black; */
 }
 
 a.cssbox_close,
@@ -101,6 +101,8 @@ a.cssbox_close {
 
 a.cssbox_close::after {
   content: "\00d7";
+  font-family: "RobotoBold";
+  font-size: 4vh;
 }
 
 a.cssbox_prev,
@@ -110,11 +112,11 @@ a.cssbox_next {
 }
 
 a.cssbox_prev {
-  left: 5%;
+  left: 1%;
 }
 
 a.cssbox_next {
-  right: 5%;
+  right: 1%;
 }
 
 a:target ~ a.cssbox_close,
@@ -129,8 +131,8 @@ a:target ~ a.cssbox_next {
   /* float: left; */
   /* width: 50%; */
   /* height: 50%; */
-  height: 60%;
-  width: 60%;
+  height: 80%;
+  width: 80%;
   object-fit: cover;
 }
 
@@ -155,10 +157,15 @@ h1 {
 
 .topmenu {
   /* display: inline-block; */
+  display: inline-block;
+  align-items: center;
+  position: fixed;
+  height: 10vh;
   top: 0;
   width: 100%;
   background-color: white;
   /* position: fixed; */
+  vertical-align: middle;
   z-index: 3;
 }
 
@@ -179,7 +186,7 @@ h1 {
 }
 
 .portfolioLinks {
-  margin-top: 10vh;
+  margin-top: 33vh;
   display: flex;
   flex-direction: column;
   font-family: "RobotoBold";
@@ -248,21 +255,21 @@ h1 {
 }
 
 .Me {
-  position: fixed;
-  top: 0vh;
-  left: 2%;
-  display: flex;
-  flex-direction: column;
-  /* display: inline-block; */
+  display: inline-block;
   color: #353535;
   font-family: "RobotoBold";
   font-weight: normal;
-  margin-top: 2vh;
-  margin-left: 2%;
-  font-size: 7vh;
-  line-height: 0.98;
+  /* margin-left: 2%; */
+  /* position: absolute; */
+  /* top: 50%; */
+  transform: translateY(50%);
+  position: relative;
+  font-size: 4.5vw;
+  line-height: 0.9;
   text-decoration: none;
   z-index: 3;
+  /* margin-top: -0.5%; */
+  left: 2%;
 }
 
 .Me:hover {
@@ -313,20 +320,11 @@ h1 {
 }
 
 .custom-block {
+  margin-top: 12vh;
   margin-left: 0;
   text-decoration: none;
   text-align: left;
   z-index: -1;
-}
-
-.gatsby-resp-image-wrapper {
-  overflow: !important;
-  margin-left: 0 !important;
-  /* margin-right: 0 !important; */
-  /* display: flex; */
-  height: 60% !important;
-  width: 80% !important;
-  object-fit: cover !important;
 }
 
 .gatsby-resp-image-image {
@@ -419,6 +417,59 @@ h1 {
   overflow-y: visible;
   line-height: 1.4;
   margin-top: 2vh;
+}
+.sideMenu {
+  width: 27%;
+  position: fixed;
+  top: 3.33vh;
+  right: 2%;
+  float: right;
+  color: #353535;
+  font-family: "RobotoCondensedBold";
+  line-height: 0.9;
+  text-transform: uppercase;
+  height: 25vw;
+}
+
+.sideBack {
+  position: absolute;
+  width: 80%;
+  font-size: 2.5vw;
+  right: 0;
+  top: 0;
+  /* word-spacing: 100vw; */
+}
+.sideBackText {
+  width: 80%;
+}
+
+.sideBack a {
+  text-decoration: none;
+  color: #353535;
+}
+
+.sideBack a:hover {
+  color: #0057ff;
+}
+
+.sideContent {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+}
+
+.sideTitle {
+  /* margin-top: 10vh; */
+  position: relative;
+  font-size: 4.45vw;
+  margin-block-end: 0;
+  color: #0057ff;
+}
+
+.sideTags {
+  word-spacing: 100vh;
+  font-size: 3.34vw;
 }
 /* .hoverable:hover {
   color: #0057ff;
