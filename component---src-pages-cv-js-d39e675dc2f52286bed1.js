@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"4ngj":function(n,t,e){"use strict";e.r(t);var a=e("q1tI"),u=(e("XUBE"),e("wsiS")),c=(e("Kvkj"),e("qKvR"));t.default=function(){var n=Object(a.useState)(!1);return n[0],n[1],Object(c.a)("div",null,Object(c.a)(u.a,null),Object(c.a)("div",null))}}}]);
-//# sourceMappingURL=component---src-pages-cv-js-d39e675dc2f52286bed1.js.map
