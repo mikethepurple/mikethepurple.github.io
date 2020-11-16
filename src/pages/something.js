@@ -94,6 +94,14 @@ function App() {
                  onMouseLeave={() => setGigwayShown(false)}
             >
               <img src={gigwaytumb}/>
+              {
+                gigwayShown ? (
+                  <div className="boroda">
+                    <img src={gigwayfolio}/>
+                  </div>
+                ) : null
+              }
+
             </div>
             <div className="portfolioImage"
                  id="assistansImage"
@@ -101,6 +109,13 @@ function App() {
               onMouseLeave={() => setLooiShown(false)}
             >
               <img src={assistanstumb}/>
+              {
+                looiShown ? (
+                  <div className="boroda">
+                    <img src={assistansfolio}/>
+                  </div>
+                ) : null
+              }
             </div>
             <div className="portfolioImage"
               onMouseOver={() => setBTCXShown(true)}
