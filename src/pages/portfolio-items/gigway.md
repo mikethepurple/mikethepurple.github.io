@@ -1,10 +1,10 @@
 ---
-title: "Assistans för Dig"
+title: "Gigway"
 date: "2019-04-12"
-type: "PRODUCT FACILITATION MANAGEMENT"
+type: "Experience and Product Lead"
 images: "../images/2890.jpg"
-tag: ["EVERYTHING", "PRODUCT", "FACILITATION", "MANAGEMENT"]
-summary: "Can we make an AR app that showcases what living with autism might feel like? We tried. Here's what happened."
+tag: ["EVERYTHING", "PRODUCT", "UX", "MANAGEMENT"]
+summary: "in February 2020 I joined Gigway to work on product, design and dev processes. Was a fun ride"
 ---
 
 <div class="imageGrid" id="imageGrid">

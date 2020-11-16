@@ -44,6 +44,7 @@ export default ({ data }) => {
           <div className="scrollRibbon heading">
             <Heading headingFirst="SCROLL " size="3vh" speed="30" />
           </div>
+
           <SideMenu
             title={post.frontmatter.title}
             tags={post.frontmatter.type}
@@ -60,7 +61,7 @@ export const query = graphql`
       frontmatter {
         title
         type
-        images
+        summary
       }
     }
   }

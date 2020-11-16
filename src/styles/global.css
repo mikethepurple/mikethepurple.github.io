@@ -1,22 +1,22 @@
 @font-face {
-  font-family: "RobotoRegular";
-  src: url("../fonts/roboto-regular-webfont.woff2");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "RobotoRegular";
+    src: url("../fonts/roboto-regular-webfont.woff2");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "RobotoBold";
-  src: url("../fonts/roboto-bold-webfont.woff");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "RobotoBold";
+    src: url("../fonts/roboto-bold-webfont.woff");
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-  font-family: "RobotoCondensedBold";
-  src: url("../fonts/robotocondensed-bold-webfont.woff2");
-  font-weight: normal;
-  font-style: normal;
+    font-family: "RobotoCondensedBold";
+    src: url("../fonts/robotocondensed-bold-webfont.woff2");
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* The work below, CSSBox, is released under the Creative Commons
@@ -24,25 +24,25 @@
    https://github.com/TheLastProject/CSSBox. You are not required to add
    additional credit to your website, just leave the above text in this file */
 div.cssbox {
-  /* object-fit: cover; */
-  height: 25vw;
-  /* width: %; */
+    /* object-fit: cover; */
+    height: 25vw;
+    /* width: %; */
 }
 
 a:active {
-  color: white !important;
+    color: white !important;
 }
 
 .imageWrapper {
-  display: inline-block;
-  width: 49.5%;
-  text-decoration: none;
-  overflow: hidden;
-  color: #353535;
-  /* height: 25vw; */
-  vertical-align: top;
-  margin-block-end: 0px;
-  margin-block-start: 0px;
+    display: inline-block;
+    width: 49.5%;
+    text-decoration: none;
+    overflow: hidden;
+    color: #353535;
+    /* height: 25vw; */
+    vertical-align: top;
+    margin-block-end: 0;
+    margin-block-start: 0;
 }
 
 /* div.cssbox a {
@@ -50,436 +50,811 @@ a:active {
 } */
 
 span.cssbox_full {
-  z-index: 999;
-  position: fixed;
-  height: 100%;
-  width: 100%;
-  background-color: white;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  pointer-events: none;
-  cursor: default;
-  transition: opacity 0.5s linear;
+    z-index: 999;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    cursor: default;
+    transition: opacity 0.5s linear;
 }
 
 span.cssbox_full img {
-  position: fixed;
-  background-color: white;
-  margin: 0;
-  padding: 0;
-  max-height: 90%;
-  max-width: 90%;
-  top: 50%;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
-  /* box-shadow: 0 0 20px black; */
+    position: fixed;
+    background-color: white;
+    padding: 0;
+    max-height: 90%;
+    max-width: 90%;
+    top: 50%;
+    left: 50%;
+    margin: 0 -50% 0 0;
+    transform: translate(-50%, -50%);
+    /* box-shadow: 0 0 20px black; */
 }
 
 a.cssbox_close,
 a.cssbox_prev,
 a.cssbox_next {
-  z-index: 999;
-  position: fixed;
-  text-decoration: none;
-  visibility: hidden;
-  color: #353535;
-  font-size: 36px;
+    z-index: 999;
+    position: fixed;
+    text-decoration: none;
+    visibility: hidden;
+    color: #353535;
+    font-size: 36px;
 }
 
 a.cssbox_close:hover,
 a.cssbox_prev:hover,
 a.cssbox_next:hover {
-  color: #0057ff;
+    color: #0057ff;
 }
 
 a.cssbox_close {
-  top: 1%;
-  right: 1%;
+    top: 1%;
+    right: 1%;
 }
 
 a.cssbox_close::after {
-  content: "\00d7";
-  font-family: "RobotoBold";
-  font-size: 4vh;
+    content: "\00d7";
+    font-family: "RobotoBold", serif;
+    font-size: 4vh;
 }
 
 a.cssbox_prev,
 a.cssbox_next {
-  top: 50%;
-  transform: translate(0%, -50%);
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
 a.cssbox_prev {
-  left: 1%;
+    left: 1%;
 }
 
 a.cssbox_next {
-  right: 1%;
+    right: 1%;
 }
 
 a:target ~ a.cssbox_close,
 a:target ~ a.cssbox_prev,
 a:target ~ a.cssbox_next {
-  visibility: visible;
+    visibility: visible;
 }
 
 .cssbox_thumb {
-  /* position: relative; */
-  /* object-fit: cover; */
-  /* float: left; */
-  /* width: 50%; */
-  /* height: 50%; */
-  height: 80%;
-  width: 80%;
-  object-fit: cover;
+    /* position: relative; */
+    /* object-fit: cover; */
+    /* float: left; */
+    /* width: 50%; */
+    /* height: 50%; */
+    height: 80%;
+    width: 80%;
+    object-fit: cover;
+}
+
+iframe {
+    height: 80%;
+    width: 80%;
+    /* object-fit: cover; */
 }
 
 a:target > img.cssbox_thumb + span.cssbox_full {
-  visibility: visible;
-  opacity: 1;
-  pointer-events: initial;
+    visibility: visible;
+    opacity: 1;
+    pointer-events: initial;
 }
+
 /* This is the end of CSSBox */
 
 html,
 body {
-  /* height: 100%;
-  margin: 0; */
-  /* background-color: #353535; */
-  /* font-size: 30vh; */
+    /* height: 100%;
+    margin: 0; */
+    /* background-color: #353535; */
+    /* font-size: 30vh; */
 }
 
 h1 {
-  /* margin-bottom: 0; */
+    /* margin-bottom: 0; */
 }
 
 .topmenu {
-  /* display: inline-block; */
-  /* display: inline-block;
-  align-items: center; */
-  position: fixed;
-  /* height: 10vh; */
-  top: 0;
-  width: 100%;
-  /* background-color: white; */
-  /* position: fixed; */
-  vertical-align: middle;
-  z-index: 3;
+    /* display: inline-block; */
+    /* display: inline-block;
+    align-items: center; */
+    position: fixed;
+    /* height: 10vh; */
+    top: 0;
+    width: 100%;
+    /* background-color: white; */
+    /* position: fixed; */
+    vertical-align: middle;
+    z-index: 1001;
+    color: #353535;
 }
 
 .noscroll {
-  overflow: hidden;
+    overflow: hidden;
 }
 
 .ticker {
-  z-index: -100;
+    z-index: -100;
 }
 
 .mainContent {
-  /* z-index: -1; */
-  margin-top: 10vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
+    /* z-index: -1; */
+    margin-top: 10vh;
+    position: relative;
+    /* display: flex; */
+    flex-direction: row;
 }
 
 .portfolioLinks {
-  margin-top: 33vh;
-  display: flex;
-  flex-direction: column;
-  font-family: "RobotoBold";
-  font-weight: normal;
-  overflow: hidden;
-  font-size: 16vw;
-  text-transform: uppercase;
-  cursor: pointer;
+    margin-top: 33vh;
+    font-family: "RobotoBold", serif;
+    height: 50vh;
+    font-weight: normal;
+    font-size: 8.3vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    word-wrap: normal;
+    width: 66%;
 }
 
 .portfolioLinks a {
-  margin-left: -1vw;
-  text-decoration: none;
-  font-family: "RobotoCondensedBold";
-  margin-block-end: 2vh;
-  line-height: 0.9;
-  color: #353535;
+    /*margin-left: 1.55%;*/
+    text-decoration: none;
+    font-family: "RobotoCondensedBold", serif;
+    margin-block-end: 0.1vh;
+    margin-right: 2%;
+    line-height: 0.9;
+    color: #353535;
 }
 
 .portfolioLinks a:hover {
-  color: #0057ff;
+    color: #0057ff;
 }
 
 .portfolioBlock {
-  display: inline-block;
-  width: 33%;
-  text-decoration: none;
-  overflow: hidden;
-  color: #353535;
-  height: 25vw;
-  vertical-align: top;
-  margin-block-end: 0px;
-  margin-block-start: 0px;
+    display: inline-block;
+    width: 33%;
+    text-decoration: none;
+    overflow: hidden;
+    color: #353535;
+    height: 25vw;
+    vertical-align: top;
+    margin-block-end: 0;
+    margin-block-start: 0;
 }
 
 .portfolioBlock:hover {
-  color: #0057ff;
+    color: #0057ff;
 }
 
 .burger:hover {
-  color: #0057ff;
+    color: #0057ff;
 }
 
 .portfolioGrid {
-  margin-top: 15vh;
+    margin-top: 15vh;
 }
 
+
+
 .gridHeading {
-  margin-block-end: 0px;
-  /* margin-block-start: 0px; */
-  text-decoration: none;
-  font-family: "RobotoCondensedBold";
-  font-size: 4.5vw;
-  width: 80%;
-  /* height: 57px; */
-  text-transform: uppercase;
-  line-height: 0.9;
+    margin-block-end: 0;
+    /* margin-block-start: 0px; */
+    text-decoration: none;
+    font-family: "RobotoCondensedBold", serif;
+    font-size: 4.5vw;
+    width: 80%;
+    /* height: 57px; */
+    text-transform: uppercase;
+    line-height: 0.9;
 }
 
 .gridText {
-  font-family: "RobotoRegular";
+    font-family: "RobotoRegular", serif;
 
-  font-size: 1.96875vw;
-  width: 75%;
-  margin-top: 1.4vw;
-  line-height: 1.1;
+    font-size: 1.96875vw;
+    width: 75%;
+    margin-top: 1.4vw;
+    line-height: 1.1;
 }
 
 .Me {
-  /* margin-left: 2%; */
-  /* position: absolute; */
-  /* top: 50%; */
-  position: fixed;
-  object-fit: cover;
-  line-height: 0.9;
-  text-decoration: none;
-  z-index: 3;
-  /* margin-top: -0.5%; */
-  transform: translateY(6%);
-  top: 3%;
-  left: 2%;
+    /* margin-left: 2%; */
+    /* position: absolute; */
+    /* top: 50%; */
+    position: fixed;
+    object-fit: cover;
+    line-height: 0.9;
+    text-decoration: none;
+    z-index: 3;
+    /* margin-top: -0.5%; */
+    transform: translateY(6%);
+    top: 3%;
+    left: 2%;
 }
 
 .Me img {
-  height: 4vh;
+    height: 4vh;
 }
 
 .Me img:hover {
-  filter: invert(42%) sepia(100%) saturate(7490%) hue-rotate(221deg)
-    brightness(104%) contrast(103%);
+    filter: invert(42%) sepia(100%) saturate(7490%) hue-rotate(221deg) brightness(104%) contrast(103%);
 }
 
 .heading {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  text-transform: uppercase;
-  margin-bottom: 0;
-  font-family: "RobotoCondensedBold";
-  font-style: normal;
-  font-weight: normal;
-  color: #353535;
-  /* overflow-wrap: anywhere; */
-  /* width: 200px; */
-  white-space: pre;
-  cursor: pointer;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-family: "RobotoCondensedBold", serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #353535;
+    /* overflow-wrap: anywhere; */
+    /* width: 200px; */
+    white-space: pre;
+    cursor: pointer;
 }
 
 .headingContent {
-  margin-block-end: 3vh;
-  line-height: 0.8;
+    margin-block-end: 3vh;
+    line-height: 0.8;
 }
 
 .heading:hover {
-  color: #0057ff;
-  font-style: italic;
+    color: #0057ff;
+    font-style: italic;
 }
 
 .portfolioItem {
-  position: absolute;
-  top: 100vh;
-  width: 100%;
+    position: absolute;
+    top: 100vh;
+    width: 100%;
+}
+
+.portfolioImage img {
+    display: inline-block;
+    width: 80% !important;
+    text-decoration: none;
+    overflow: hidden;
+    color: #353535;
+    height: 20vw !important;
+    vertical-align: top;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.portfolioImage:hover{
+    /*position:absolute;*/
+    width: 88% !important;
+    height: 45vw !important;
+    margin-bottom: 5vw;
+
+}
+#gigwayImage:hover {
+    content:url("../portfolioimages/gigwayfolio.png");
+}
+#assistansImage:hover {
+    content:url("../portfolioimages/assistansfolio.png");
+}
+
+.portfolioImage:hover {
+    left:-20px;
 }
 
 .custom-block-heading {
-  width: 100%;
-  margin-left: -1vh;
-  font-size: 8.3vw;
-  font-family: "RobotoCondensedBold";
-  text-transform: uppercase;
-  line-height: 0.9;
-  color: #353535;
-  margin-block-end: 4vh;
+    width: 100%;
+    margin-left: -1vh;
+    font-size: 8.3vw;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #353535;
+    margin-block-end: 4vh;
+    margin-top: 8.3vw;
 }
 
 .custom-block {
-  margin-top: 12vh;
-  margin-left: 0;
-  text-decoration: none;
-  text-align: left;
-  z-index: -1;
+    margin-top: 12vh;
+    margin-left: 0;
+    text-decoration: none;
+    text-align: left;
+    z-index: -1;
+    margin-bottom: 4vw;
 }
 
 .gatsby-resp-image-image {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 .image {
-  /* left: 0px; */
-  align-self: left;
-  margin-left: 0px;
-  /* float: left; */
-  height: 60%;
-  width: 80%;
-  object-fit: cover;
+    /* left: 0px; */
+    /*align-self: left;*/
+    margin-left: 0;
+    /* float: left; */
+    height: 60%;
+    width: 80%;
+    object-fit: cover;
 }
 
 .custom-block-body {
-  font-family: "RobotoRegular";
-  font-size: 2.5vw;
+    font-family: "RobotoRegular", serif;
+    font-size: 2.5vw;
 }
 
 .imageGrid {
 }
 
 .custom-block-body p {
-  margin-block-start: 0 !important;
-  margin-block-end: 0 !important;
+    margin-block-start: 0 !important;
+    margin-block-end: 0 !important;
 }
 
 .scrollRibbon {
-  font-family: "RobotoRegular" !important;
-  color: #0057ff !important;
-  position: fixed;
-  bottom: 0vh;
-  width: 100%;
-  margin-block-end: -10;
-  cursor: default;
-  line-height: 0.9;
-  height: 2.3vh;
-  z-index: -2;
+    font-family: "RobotoRegular", serif !important;
+    color: #0057ff !important;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    /*margin-block-end: -10;*/
+    cursor: default;
+    line-height: 0.9;
+    height: 2.3vh;
+    z-index: -2;
 }
 
 .scrollCheat {
-  /* position: absolute; */
-  flex-shrink: 0;
-  /* bottom: 0; */
-  height: 3vh;
-  background-color: white;
-  width: 100%;
-  z-index: 20;
+    /* position: absolute; */
+    flex-shrink: 0;
+    /* bottom: 0; */
+    height: 3vh;
+    background-color: white;
+    width: 100%;
+    z-index: 20;
 }
 
 .portfolioWrapper {
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* height: 100%; */
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* height: 100%; */
 }
 
 .portfolioContent {
-  width: 66.8%;
+    width: 66.8%;
+}
+
+.pageHeadings {
+    position: relative;
+    top: 20vh;
+}
+
+.cvContent {
+    /*position: absolute;*/
+    /*top: 100vh;*/
+    width: 100%;
+}
+
+.cvTitle {
+    width: 100%;
+    margin-left: -1vh;
+    font-size: 8.3vw;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #353535;
+    margin-block-end: 8.3vw;
+    margin-top: 10vw;
+}
+
+.experienceGrid {
+    width: 66.8%;
+    /* margin-top: 7vw; */
+}
+
+.cvWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    vertical-align: top;
+}
+
+.cvGrid div {
+    display: inline-block;
+    width: 49%;
+    text-decoration: none;
+    overflow: hidden;
+    color: #353535;
+    height: 25vw;
+    vertical-align: top;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.cvGrid div p {
+    font-size: 4.6vw;
+    line-height: 0.9;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+}
+
+.portfolioLinkGrid div {
+    display: inline-block;
+    width: 49%;
+    /* text-decoration: none; */
+    overflow: hidden;
+    color: #353535;
+    height: 25vw;
+    vertical-align: top;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.portfolioLinkGrid div a {
+    font-size: 4.6vw;
+    line-height: 0.9;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    /* text-decoration: none; */
+    color: #353535;
+}
+
+.portfolioLinkGrid div a:hover {
+    color: #0057ff;
+}
+
+.cvGrid div:hover {
+    color: #0057ff;
+}
+
+.cvGrid {
+    width: 66.8%;
+
+}
+
+.experienceSide {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    width: 33% !important;
+    /*top: 0;*/
+    font-family: "RobotoCondensedBold", serif;
+    line-height: 0.9;
+    left: 66%;
+    top: 3.5%;
+    text-transform: uppercase;
+    /* background: white; */
+    z-index: 99;
+}
+
+.experienceSideSecond {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 33% !important;
+    /*top: 0;*/
+    font-family: "RobotoCondensedBold", serif;
+    line-height: 0.9;
+    left: 66.8%;
+    top: 41.3vw;
+    text-transform: uppercase;
+}
+
+.experienceSideThird {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 33% !important;
+    /*top: 0;*/
+    font-family: "RobotoCondensedBold", serif;
+    line-height: 0.9;
+    left: 66.8%;
+    top: 41.1vw;
+    text-transform: uppercase;
+}
+
+.educationSide {
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 33% !important;
+    /*top: 0;*/
+    font-family: "RobotoCondensedBold", serif;
+    line-height: 0.9;
+    left: 66.8%;
+    top: 106.6vw;
+    text-transform: uppercase;
+}
+
+.experienceSideTitle {
+    font-family: "RobotoCondensedBold", serif;
+    font-size: 2.4vw;
+    line-height: 0.9;
+    margin-top: 1.2vw;
+    margin-bottom: 0;
+    margin-block-end: 0;
+    /*color: #0057ff;*/
+}
+
+.experienceSideSub {
+    font-size: 1.6vw;
+    line-height: 0.9 !important;
+    /*color: #0057ff;*/
+}
+
+.experienceHead {
+    width: 80%;
+}
+
+.experienceHead img {
+    height: 7vw;
+    margin-bottom: 0;
+}
+
+.experienceText {
+    font-family: "RobotoRegular", serif;
+    font-size: 2vw;
+    width: 82%;
+    line-height: 1;
+    margin-top: 4.5vw;
+    text-transform: none;
+}
+
+.skillHeadline {
+    /* display: flex;
+    flex-direction: row; */
+    width: 100%;
+    margin-top: 14vw;
+    position: relative;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+}
+
+.skillTitle {
+    display: inline-block;
+    word-break: break-all;
+    /* margin-top: 10vh; */
+    /* position: absolute; */
+    /* left: 32.4%; */
+    width: 33%;
+    line-height: 0.9;
+    text-transform: uppercase;
+    /* margin-block-end: 20vh; */
+    font-size: 8.3vw;
+}
+
+.skillTitle p {
+    margin-left: -1%;
+}
+
+.skillSub {
+    display: inline-block;
+    /* word-break: break-all; */
+    margin-top: 10vh;
+    /* position: absolute; */
+    /* left: 32.4%; */
+    width: 33%;
+    line-height: 0.9;
+    text-transform: uppercase;
+    /* margin-block-end: 20vh; */
+    font-size: 2.4vw;
+}
+
+.goodSkills {
+    display: inline-block;
+    vertical-align: top;
+    align-content: flex-start;
+    width: 33%;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.goodishSkills {
+    vertical-align: top;
+    display: inline-block;
+    align-content: flex-start;
+    top: 0;
+    left: 66.8%;
+    width: 33%;
+    line-height: 0.9;
+    text-transform: uppercase;
+}
+
+.goodSkills div {
+    width: 90%;
+}
+
+.goodSkills div p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.goodSkills div p:hover {
+    color: #0057ff;
+}
+
+.goodishSkills div {
+    width: 90%;
+}
+
+.goodishSkills div p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.goodishSkills div p:hover {
+    color: #0057ff;
 }
 
 .portfolioTitle {
-  width: 100%;
-  top: 30vh;
-  position: absolute;
-  /* height: 50vh; */
-  margin-top: 10vh;
-  line-height: 1.4;
-  z-index: -2;
-  margin-top: 0;
-  /* overflow-y: visible; */
-  /* font-family: "RobotoCondensedBold"; */
+    width: 100%;
+    top: 30vh;
+    position: absolute;
+    /* height: 50vh; */
+    /*margin-top: 10vh;*/
+    line-height: 1.4;
+    z-index: -2;
+    margin-top: 0;
+    /* overflow-y: visible; */
+    /* font-family: "RobotoCondensedBold"; */
+}
+
+.skillGrid {
+    font-family: "RobotoCondensedBold", serif;
+    font-size: 4.6vw;
+    width: 100%;
 }
 
 .overlayText {
-  z-index: 50;
+    z-index: 50;
 }
 
 .overlayText div {
-  visibility: hidden;
+    visibility: hidden;
 }
 
 .overlayText:hover div {
-  visibility: visible;
+    visibility: visible;
 }
 
 .portfolioTitle div {
-  height: 40vh;
-  overflow-y: visible;
-  line-height: 1.4;
-  margin-top: 2vh;
+    height: 40vh;
+    overflow-y: visible;
+    line-height: 1.4;
+    margin-top: 2vh;
 }
+
 .sideMenu {
-  width: 27%;
-  position: fixed;
-  top: 3.33vh;
-  right: 2%;
-  float: right;
-  color: #353535;
-  font-family: "RobotoCondensedBold";
-  line-height: 0.9;
-  text-transform: uppercase;
-  height: 25vw;
+    width: 27%;
+    position: fixed;
+    top: 3.33vh;
+    right: 2%;
+    float: right;
+    color: #353535;
+    font-family: "RobotoCondensedBold", serif;
+    line-height: 0.9;
+    text-transform: uppercase;
+    height: 25vw;
 }
 
 .sideBack {
-  position: absolute;
-  width: 80%;
-  font-size: 2.5vw;
-  right: 0;
-  top: 0;
-  /* word-spacing: 100vw; */
+    position: absolute;
+    width: 80%;
+    font-size: 2.5vw;
+    right: 0;
+    top: 0;
+    /* word-spacing: 100vw; */
 }
+
 .sideBackText {
-  width: 80%;
+    width: 80%;
 }
 
 .sideBack a {
-  text-decoration: none;
-  color: #353535;
+    text-decoration: none;
+    color: #353535;
 }
 
 .sideBack a:hover {
-  color: #0057ff;
+    color: #0057ff;
 }
 
 .sideContent {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 80%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 80%;
 }
 
 .sideTitle {
-  /* margin-top: 10vh; */
-  position: relative;
-  font-size: 4.45vw;
-  margin-block-end: 0;
-  color: #0057ff;
+    /* margin-top: 10vh; */
+    position: relative;
+    font-size: 4.45vw;
+    margin-block-end: 0;
+    color: #0057ff;
 }
 
 .sideTags {
-  word-spacing: 100vh;
-  font-size: 3.34vw;
+    word-spacing: 100vh;
+    font-size: 3.34vw;
 }
 
 .anchor {
-  position: relative;
-  height: 0;
-  top: 9vh;
+    position: relative;
+    height: 0;
+    top: 9vh;
 }
+
 /* .hoverable:hover {
   color: #0057ff;
 } */
+
+.twitterFeed {
+    /* display: flex; */
+    position: absolute;
+    margin-left: -250px;
+    margin-top: 12vh;
+    left: 50%;
+
+    /* top: 5%; */
+}
+
+.twitterLink {
+    position: relative;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #353535;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.twitterLink a {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #353535;
+    font-family: "RobotoCondensedBold", serif;
+    text-transform: uppercase;
+    font-size: 20px;
+}
+
+.twitterLink a:hover {
+    text-decoration: underline;
+    color: #0057ff;
+}
+
+.problemGrid {
+    width: 100%;
+}
+
+.problemGrid div {
+    display: inline-block;
+    width: 33%;
+    /* text-decoration: none; */
+    /* overflow: hidden; */
+    color: #353535;
+    /* height: 25vw; */
+    vertical-align: top;
+    margin-block-end: 0;
+    margin-block-start: 0;
+}
+
+.problemGrid div div {
+    width: 100%;
+}

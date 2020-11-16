@@ -66,5 +66,45 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-twitter`,
+      options: {
+        credentials: {
+          consumer_key: "OP5l4lkMC4mKbvnuoh4SvTfNO",
+          consumer_secret: "kLhtbLzmg0KU3nFaqBRzH0phjxBtJ8SKDrEkSj6jDqHTi1EBkT",
+          bearer_token:
+            "AAAAAAAAAAAAAAAAAAAAAI8VDwEAAAAAv11FkRMhsAB%2Fxx1gyccVm2MwxyY%3DtCngrsus82REyS7Ts6k3q5Z0nyyQgUb53nWjNEoetXPedQ1LAQ",
+        },
+        queries: {
+          HackersTweets: {
+            endpoint: `statuses/user_timeline`,
+            params: {
+              screen_name: `mikethepurple`,
+              include_rts: true,
+              exclude_replies: true,
+              tweet_mode: `extended`,
+              count: 3,
+            },
+          },
+          AuthorTwitterProfiles: {
+            endpoint: `lists/members`,
+            params: {
+              list_id: `1043490256052539392`,
+              include_rts: true,
+              exclude_replies: true,
+              tweet_mode: `extended`,
+              count: 20,
+            },
+          },
+          SearchTweets: {
+            endpoint: "search/tweets",
+            params: {
+              q: "#python",
+              tweet_mode: "extended",
+            },
+          },
+        },
+      },
+    },
   ],
 }

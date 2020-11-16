@@ -5,12 +5,12 @@ import { Burger, Menu } from "."
 
 function App({ link, headingText, mainText }) {
   return (
-    <Link to={link} className="portfolioBlock">
+    <div  className="portfolioBlock">
       <div>
         <p className="gridHeading">{headingText}</p>
         <p className="gridText">{mainText}</p>
       </div>
-    </Link>
+    </div>
   )
 }
 

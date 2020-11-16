@@ -6,6 +6,7 @@ import { Link, graphql } from "gatsby"
 import PortfolioBlock from "../components/portfolioblock"
 import Topmenu from "../components/topmenu"
 import { useState } from "react"
+import Heading from "../components/headings"
 
 var type = "EVERYTHING"
 
@@ -15,6 +16,10 @@ export default ({ data }) => {
   return (
     <div>
       <Topmenu />
+      <div className="scrollRibbon heading">
+        <Heading headingFirst="SCROLL " size="3vh" speed="30" />
+      </div>
+      <div className="scrollCheat"></div>
       <div className="portfolioLinks">
         <a onClick={() => setType("EVERYTHING")} href="#copy">
           <span aria-label="EVERYTHING"></span>
@@ -44,6 +49,7 @@ export default ({ data }) => {
           <span role="img" aria-label="NOTHING"></span>
           NOTHING
         </a>
+
         <div id="anchor" className="anchor" />
       </div>
       <div className="portfolioGrid" id="grid">
@@ -54,11 +60,12 @@ export default ({ data }) => {
                 key={node.id}
                 link={node.fields.slug}
                 headingText={node.frontmatter.title}
-                mainText={node.excerpt}
+                mainText={node.frontmatter.summary}
               />
             )
           }
         })}
+        <div className="scrollCheat"></div>
       </div>
     </div>
   )
@@ -75,6 +82,7 @@ export const query = graphql`
             title
             date(formatString: "DD MMMM, YYYY")
             tag
+            summary
           }
           fields {
             slug
