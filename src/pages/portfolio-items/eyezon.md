@@ -3,6 +3,7 @@ title: "Eyezon"
 date: "2019-12-20"
 type: "portfolio"
 images: "/../../images/2890.jpg"
+tag: ["PRODUCT", "UX", "RESEARCH", "EVERYTHING"]
 ---
 
 [[portfolioParagraph | EYEZON]]

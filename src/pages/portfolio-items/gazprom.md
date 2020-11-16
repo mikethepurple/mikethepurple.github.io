@@ -2,6 +2,7 @@
 title: "Gazprom"
 date: "2019-10-21"
 type: "portfolio"
+tag: ["UX", "RESEARCH", "EVERYTHING"]
 ---
 
 A spooky secret project that I can’t really talk about for the biggest russian Oil producing company

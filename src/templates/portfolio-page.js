@@ -8,9 +8,11 @@ import SideMenu from "../components/sidemenu"
 
 export default ({ data }) => {
   const post = data.markdownRemark
+  console.log(post.frontmatter.tag)
   return (
     <div>
       <Layout />
+      <span>{post.frontmatter.tag}</span>
       <div className="portolioWrapper">
         <div className="portfolioContent">
           <img source="../images/2890.jpg" />

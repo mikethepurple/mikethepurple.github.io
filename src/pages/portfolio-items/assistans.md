@@ -3,7 +3,7 @@ title: "Assistans för Dig"
 date: "2019-04-12"
 type: "PRODUCT FACILITATION MANAGEMENT"
 images: "../images/2890.jpg"
-tag: "PRODUCT FACILITATION MANAGEMENT"
+tag: ["PRODUCT", "FACILITATION", "MANAGEMENT", "EVERYTHING"]
 ---
 
 <div class="imageGrid" id="imageGrid">

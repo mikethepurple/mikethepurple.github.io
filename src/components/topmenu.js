@@ -8,13 +8,14 @@ import { Burger, Menu } from "."
 // import { rhythm } from "../utils/typography"
 // import Container from "./container"
 import { useState } from "react"
+import Logo from "../images/me.svg"
 
 function App() {
   const [open, setOpen] = useState(false)
   return (
     <div className="topmenu">
       <a className="Me" href="/">
-        <img src="https://raw.githubusercontent.com/mikethepurple/mikethepurple.github.io/master-source/src/images/me.png" />
+        <img src={Logo} />
       </a>
       <div>
         <Burger className="burger" open={open} setOpen={setOpen} />

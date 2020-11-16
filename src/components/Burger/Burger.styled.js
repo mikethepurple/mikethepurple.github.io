@@ -1,16 +1,13 @@
 import styled from "styled-components"
 export const StyledBurger = styled.button`
-  
-  top: 50%
-  
-  position: absolute;
-  right: 2%;
-  transform: translateY(-50%);
+  position: fixed;
+  top: 3%;
+  right: 2vw;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 3vw;
-  height: 3vw;
+  width: 5vh;
+  height: 5vh;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -26,8 +23,8 @@ export const StyledBurger = styled.button`
   }
 
   div {
-    width: 3vw;
-    height: 0.3vw;
+    width: 5vh;
+    height: 0.5vh;
     background: #353535;
     border-radius: 10px;
     transition: all 0.3s linear;

@@ -5,55 +5,65 @@ import { Link, graphql } from "gatsby"
 // import { rhythm } from "../utils/typography"
 import PortfolioBlock from "../components/portfolioblock"
 import Topmenu from "../components/topmenu"
+import { useState } from "react"
+
+var type = "EVERYTHING"
+
 export default ({ data }) => {
   console.log(data)
+  const [type, setType] = useState("LOL")
   return (
     <div>
       <Topmenu />
-
       <div className="portfolioLinks">
-        <a href="">
-          <span role="img" aria-label="EVERYTHING"></span>
+        <a onClick={() => setType("EVERYTHING")} href="#copy">
+          <span aria-label="EVERYTHING"></span>
           EVERYTHING
         </a>
-        <a href="/cv">
+        <a onClick={() => setType("UX")} href="#copy">
           <span role="img" aria-label="UX"></span>
           UX
         </a>
-        <a href="/portfolio">
+        <a onClick={() => setType("PRODUCT")} href="#copy">
           <span role="img" aria-label="PRODUCT"></span>
           PRODUCT
         </a>
-        <a href="/">
+        <a onClick={() => setType("RESEARCH")} href="#copy">
           <span role="img" aria-label="RESEARCH"></span>
           RESEARCH
         </a>
-        <a href="/">
+        <a onClick={() => setType("FACILITATION")} href="#copy">
           <span role="img" aria-label="FACILITATION"></span>
           FACILITATION
         </a>
-        <a href="/">
+        <a onClick={() => setType("MANAGEMENT")} href="#copy">
           <span role="img" aria-label="MANAGEMENT"></span>
           MANAGEMENT
         </a>
-        <a href="/">
+        <a onClick={() => setType("NOTHING")} id="copy">
           <span role="img" aria-label="NOTHING"></span>
-          COPY
+          NOTHING
         </a>
+        <div id="anchor" className="anchor" />
       </div>
-      <div className="portfolioGrid">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
-          <PortfolioBlock
-            key={node.id}
-            link={node.fields.slug}
-            headingText={node.frontmatter.title}
-            mainText={node.excerpt}
-          />
-        ))}
+      <div className="portfolioGrid" id="grid">
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          if (node.frontmatter.tag.includes(type)) {
+            return (
+              <PortfolioBlock
+                key={node.id}
+                link={node.fields.slug}
+                headingText={node.frontmatter.title}
+                mainText={node.excerpt}
+              />
+            )
+          }
+        })}
       </div>
     </div>
   )
 }
+
 export const query = graphql`
   query {
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -64,6 +74,7 @@ export const query = graphql`
           frontmatter {
             title
             date(formatString: "DD MMMM, YYYY")
+            tag
           }
           fields {
             slug
