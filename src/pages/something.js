@@ -1,6 +1,10 @@
 import React from "react"
 import Topmenu from "../components/topmenu"
 import { useState } from "react"
+import { StickyContainer, Sticky } from "react-sticky"
+// import Sticky from "react-stickynode"
+import StickyBox from "react-sticky-box/dist/esnext"
+
 import six from "../cvimages/adv.png"
 import looi from "../cvimages/looi.png"
 import undo from "../cvimages/undo.png"
@@ -17,31 +21,43 @@ import assistanstumb from "../portfolioimages/assistansfolio3.png"
 import dsfolio from "../portfolioimages/DSfolio.png"
 import dstumb from "../portfolioimages/DSfolio3.png"
 import flacontumb from "../portfolioimages/flaconfolio3.png"
+import flaconfolio from "../portfolioimages/flaconfolio.png"
 import gztumb from "../portfolioimages/GZfolio3.png"
-import kickicotumb from "../portfolioimages/kickicofolio3.png"
+import gzfolio from "../portfolioimages/GZfolio.png"
+import kicktumb from "../portfolioimages/kickicofolio3.png"
+import kickfolio from "../portfolioimages/kickicofolio.png"
 import undotumb from "../portfolioimages/undofolio3.png"
+import undofolio from "../portfolioimages/undofolio.png"
 import tbtumb from "../portfolioimages/tbfolio3.png"
+import tbfolio from "../portfolioimages/tbfolio.png"
 import portaltumb from "../portfolioimages/portalfolio3.png"
+import portalfolio from "../portfolioimages/portalfolio.png"
 import eyezontumb from "../portfolioimages/eyezonfolio3.png"
+import eyezonfolio from "../portfolioimages/eyezonfolio.png"
+
 
 import { StyledSide } from "../components/cv.styled"
 import Heading from "../components/headings"
 import PortfolioBlock from "../components/portfolioblock"
 
 function App() {
-  const [adShown, setAdShown] = useState(false)
-  const [looiShown, setLooiShown] = useState(false)
+  const [eyezonShown, setEyezonShown] = useState(false)
+  const [assistansShown, setAssistansShown] = useState(false)
   const [undoShown, setUndoShown] = useState(false)
-  const [freelanceShown, setFreelanceShown] = useState(false)
+  const [gzShown, setGzShown] = useState(false)
   const [seShown, setSeShown] = useState(false)
   const [hyperShown, setHyperShown] = useState(false)
-  const [btcxShown, setBTCXShown] = useState(false)
+  const [dsShown, setDsShown] = useState(false)
   const [gigwayShown, setGigwayShown] = useState(false)
+  const [tbShown, setTbShown] = useState(false)
+  const [flaconShown, setFlaconShown] = useState(false)
+  const [kickShown, setKickShown] = useState(false)
+  const [portalShown, setPortalShown] = useState(false)
 
   var section = "ALL"
-  var arr = ['STRATEGY', 'ALL', 'UX']
-  const [type, setType] = useState("LOL")
-  var portarr = [[["STRATEGY", "UX"], "Lokh", "I’m alright in gen but getting pretty tiresome with this new lockdown"],[["UX"], "EYEZON", "Some text"],[["STRATEGY", "UX"], "GIGWAY", "Some text"]]
+  var arr = ["STRATEGY", "ALL", "UX"]
+  const [type, setType] = useState("ALL")
+  var portarr = [[["STRATEGY", "UX"], "Lokh", "I’m alright in gen but getting pretty tiresome with this new lockdown"], [["UX"], "EYEZON", "Some text"], [["STRATEGY", "UX"], "GIGWAY", "Some text"]]
 
 
   return (
@@ -69,81 +85,230 @@ function App() {
         </a>
       </div>
 
-      <div className="portfolioGrid" id="grid">
-        {portarr.map(( item) => {
 
-          if (item[0].indexOf(type)  > -1 ) {
-            return (
-              <PortfolioBlock
-                // key={node.id}
-                // link={'www'}
-                headingText={item[1]}
-                mainText={item[2]}
-              />
-            )
-          }
-        })}
-      </div>
       <div className="cvContent">
-        <p className="cvTitle">Experience</p>
-        <div className="cvWrapper">
+        {/*<p className="cvTitle">Experience</p>*/}
+        <StickyContainer className="cvWrapper">
           <div className="cvGrid">
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={gigwaytumb}
+                       onMouseEnter={() => setGigwayShown(true)}
+                       onMouseLeave={() => setGigwayShown(false)} />
+                  {
+                    gigwayShown ? (
+                      <div className="boroda">
+                        <img src={gigwayfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "UX") ? (
+                <div className="portfolioImage"
+                     id="assistansImage"
+
+                >
+                  <img src={assistanstumb}
+                       onMouseEnter={() => setAssistansShown(true)}
+                       onMouseLeave={() => setAssistansShown(false)} />
+                  {
+                    assistansShown ? (
+                      <div className="boroda">
+                        <img src={assistansfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
             <div className="portfolioImage"
-                 id="gigwayImage"
-                 onMouseOver={() => setGigwayShown(true)}
-                 onMouseLeave={() => setGigwayShown(false)}
             >
-              <img src={gigwaytumb}/>
+              <img src={dstumb}
+                   onMouseEnter={() => setDsShown(true)}
+                   onMouseLeave={() => setDsShown(false)} />
               {
-                gigwayShown ? (
+                dsShown ? (
                   <div className="boroda">
-                    <img src={gigwayfolio}/>
+                    <img src={dsfolio} />
                   </div>
                 ) : null
               }
-
             </div>
-            <div className="portfolioImage"
-                 id="assistansImage"
-              onMouseOver={() => setLooiShown(true)}
-              onMouseLeave={() => setLooiShown(false)}
-            >
-              <img src={assistanstumb}/>
+            <div className="portfolioImage">
+              <img src={undotumb}
+                   onMouseEnter={() => setUndoShown(true)}
+                   onMouseLeave={() => setUndoShown(false)} />
               {
-                looiShown ? (
+                undoShown ? (
                   <div className="boroda">
-                    <img src={assistansfolio}/>
+                    <img src={undofolio} />
                   </div>
                 ) : null
               }
             </div>
-            <div className="portfolioImage"
-              onMouseOver={() => setBTCXShown(true)}
-              onMouseLeave={() => setBTCXShown(false)}
-            >
-              <img src={dstumb}/>
-            </div>
-            <div className="portfolioImage"
-              onMouseOver={() => setUndoShown(true)}
-              onMouseLeave={() => setUndoShown(false)}
-            >
-              <img src={undotumb}/>
-            </div>
-            <div className="portfolioImage"
-              onMouseOver={() => setAdShown(true)}
-              onMouseLeave={() => setAdShown(false)}
-            >
-              <img  src={eyezontumb}/>
-            </div>
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "UX") ? (
+                <div className="portfolioImage"
 
-            <div className="portfolioImage"
-              onMouseOver={() => setFreelanceShown(true)}
-              onMouseLeave={() => setFreelanceShown(false)}
-            >
-              <img src={gztumb}/>
-            </div>
+                >
+                  <img src={eyezontumb}
+                       onMouseOver={() => setEyezonShown(true)}
+                       onMouseLeave={() => setEyezonShown(false)} />
+                  {
+                    eyezonShown ? (
+                      <div className="boroda">
+                        <img src={eyezonfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "UX") ? (
+                <div className="portfolioImage"
+
+                >
+                  <img src={gztumb}
+                       onMouseOver={() => setGzShown(true)}
+                       onMouseLeave={() => setGzShown(false)} />
+                  {
+                    gzShown ? (
+                      <div className="boroda">
+                        <img src={gzfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={tbtumb}
+                       onMouseEnter={() => setTbShown(true)}
+                       onMouseLeave={() => setTbShown(false)} />
+                  {
+                    tbShown ? (
+                      <div className="boroda">
+                        <img src={tbfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={flacontumb}
+                       onMouseEnter={() => setFlaconShown(true)}
+                       onMouseLeave={() => setFlaconShown(false)} />
+                  {
+                    flaconShown ? (
+                      <div className="boroda">
+                        <img src={flaconfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={kicktumb}
+                       onMouseEnter={() => setKickShown(true)}
+                       onMouseLeave={() => setKickShown(false)} />
+                  {
+                    kickShown ? (
+                      <div className="boroda">
+                        <img src={kickfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={portaltumb}
+                       onMouseEnter={() => setPortalShown(true)}
+                       onMouseLeave={() => setPortalShown(false)} />
+                  {
+                    portalShown ? (
+                      <div className="boroda">
+                        <img src={portalfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
           </div>
-          <StyledSide className="experienceSide" show={adShown}>
+          <Sticky>
+            {({
+                style = {
+                  position: "fixed",
+                  width: "33% !important",
+
+
+            },
+
+              // the following are also available but unused in this example
+              isSticky,
+              wasSticky,
+              distanceFromTop,
+              distanceFromBottom,
+              calculatedHeight,
+            }) => (
+              <div style={style}>
+              <StyledSide className="experienceSide" show={gigwayShown}>
+              <div className="experienceHead">
+              <img src={gigway} alt={"gigway's logo"} />
+              <p className="experienceSideTitle">Experience & <br /> Product Lead</p>
+              <p className="experienceSideSub">
+              SINCE FEB 2020
+              <br />
+              <br />
+              DESIGN, USER EXPERIENCE, PRODUCT MANAGEMENT
+              </p>
+              </div>
+              <div className="experienceText">
+              <p>
+              In 2017 joined BT.CX, a swedish crypto startup.
+              <br /> <br /> Worked closely with the Engineering teams as the
+              only Product Designer, delivering small UI and UX fixes as well
+              as a full redesign of the app and the platform
+              </p>
+              </div>
+              </StyledSide>
+              </div>
+              )}
+          </Sticky>
+
+          <StyledSide className="experienceSide" show={eyezonShown}>
             <div className="experienceHead">
               <img src={six} alt={"logo"} />
               <p className="experienceSideTitle">DIGITAL STRATEGIST</p>
@@ -168,7 +333,7 @@ function App() {
               </p>
             </div>
           </StyledSide>
-          <StyledSide className="experienceSide" show={looiShown}>
+          <StyledSide className="experienceSide" show={assistansShown}>
             <div className="experienceHead">
               <img src={looi} alt={"Looi's Logo"} />
               <p className="experienceSideTitle">PRODUCT OWNER</p>
@@ -213,7 +378,7 @@ function App() {
               </p>
             </div>
           </StyledSide>
-          <StyledSide className="experienceSide" show={freelanceShown}>
+          <StyledSide className="experienceSide" show={gzShown}>
             <div className="experienceHead">
               <img src={freelance} alt={"logos of the random companies I freelanced for"} />
               <p className="experienceSideTitle">DESIGNER, STRATEGIST</p>
@@ -238,7 +403,7 @@ function App() {
               </p>
             </div>
           </StyledSide>
-          <StyledSide className="experienceSide" show={btcxShown}>
+          <StyledSide className="experienceSide" show={dsShown}>
             <div className="experienceHead">
               <img src={btcx} alt={"BTCX logo"} />
               <p className="experienceSideTitle">DESIGNER, STRATEGIST</p>
@@ -258,27 +423,8 @@ function App() {
               </p>
             </div>
           </StyledSide>
-          <StyledSide className="experienceSide" show={gigwayShown}>
-            <div className="experienceHead">
-              <img src={gigway} alt={"gigway's logo"} />
-              <p className="experienceSideTitle">Experience & <br /> Product Lead</p>
-              <p className="experienceSideSub">
-                SINCE FEB 2020
-                <br />
-                <br />
-                DESIGN, USER EXPERIENCE, PRODUCT MANAGEMENT
-              </p>
-            </div>
-            <div className="experienceText">
-              <p>
-                In 2017 joined BT.CX, a swedish crypto startup.
-                <br /> <br /> Worked closely with the Engineering teams as the
-                only Product Designer, delivering small UI and UX fixes as well
-                as a full redesign of the app and the platform
-              </p>
-            </div>
-          </StyledSide>
-        </div>
+
+        </StickyContainer>
         <p className="cvTitle">Education</p>
         <div className="cvWrapper">
           <div className="cvGrid">

@@ -333,6 +333,10 @@ h1 {
     margin-block-start: 0;
 }
 
+.portfolioImage img {
+    cursor: url('../images/glass.png'), auto;
+}
+
 /*.portfolioImage:hover{*/
     /*!*position:absolute;*!*/
     /*width: 88% !important;*/
@@ -347,8 +351,9 @@ h1 {
 .cvGrid .boroda {
     position: absolute;
     left: 0;
-    width: 80%;
+    width: 74%;
     height: max-content;
+    pointer-events: none;
 }
 /*#assistansImage:hover {*/
     /*content:url("../portfolioimages/assistansfolio.png");*/
@@ -530,9 +535,9 @@ h1 {
 }
 
 .experienceSide {
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
+    /*visibility: hidden;*/
+    /*display: flex;*/
+    /*flex-direction: column;*/
     position: fixed;
     width: 33% !important;
     /*top: 0;*/
