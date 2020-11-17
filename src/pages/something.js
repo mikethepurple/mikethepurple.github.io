@@ -271,41 +271,31 @@ function App() {
             {({
                 style = {
                   position: "fixed",
-                  width: "33% !important",
-
-
-            },
-
-              // the following are also available but unused in this example
-              isSticky,
-              wasSticky,
-              distanceFromTop,
-              distanceFromBottom,
-              calculatedHeight,
-            }) => (
+                },
+              }) => (
               <div style={style}>
-              <StyledSide className="experienceSide" show={gigwayShown}>
-              <div className="experienceHead">
-              <img src={gigway} alt={"gigway's logo"} />
-              <p className="experienceSideTitle">Experience & <br /> Product Lead</p>
-              <p className="experienceSideSub">
-              SINCE FEB 2020
-              <br />
-              <br />
-              DESIGN, USER EXPERIENCE, PRODUCT MANAGEMENT
-              </p>
+                <StyledSide className="experienceSide" show={gigwayShown}>
+                  <div className="experienceHead">
+                    <img src={gigway} alt={"gigway's logo"} />
+                    <p className="experienceSideTitle">Experience & <br /> Product Lead</p>
+                    <p className="experienceSideSub">
+                      SINCE FEB 2020
+                      <br />
+                      <br />
+                      DESIGN, USER EXPERIENCE, PRODUCT MANAGEMENT
+                    </p>
+                  </div>
+                  <div className="experienceText">
+                    <p>
+                      In 2017 joined BT.CX, a swedish crypto startup.
+                      <br /> <br /> Worked closely with the Engineering teams as the
+                      only Product Designer, delivering small UI and UX fixes as well
+                      as a full redesign of the app and the platform
+                    </p>
+                  </div>
+                </StyledSide>
               </div>
-              <div className="experienceText">
-              <p>
-              In 2017 joined BT.CX, a swedish crypto startup.
-              <br /> <br /> Worked closely with the Engineering teams as the
-              only Product Designer, delivering small UI and UX fixes as well
-              as a full redesign of the app and the platform
-              </p>
-              </div>
-              </StyledSide>
-              </div>
-              )}
+            )}
           </Sticky>
 
           <StyledSide className="experienceSide" show={eyezonShown}>
