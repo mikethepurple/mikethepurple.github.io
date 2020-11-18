@@ -192,30 +192,72 @@ h1 {
     flex-direction: row;
 }
 
-.portfolioLinks {
-    margin-top: 33vh;
+.menuHint {
+    margin-top: 30vh;
     font-family: "RobotoBold", serif;
-    height: 50vh;
-    font-weight: normal;
-    font-size: 8.3vw;
+    font-size: 2vh;
     text-transform: uppercase;
-    cursor: pointer;
-    word-wrap: normal;
-    width: 66%;
+    margin-left: 2%;
+    margin-block-end: 0;
+    line-height: 0;
+    height: 0;
+    color: #0057ff;
+    width: 33%;
 }
 
-.portfolioLinks a {
+.menuHint p {
+    margin-bottom: 0 !important;
+}
+
+.portfolioLinks {
+    margin-top: 20vh;
+    font-family: "RobotoBold", serif;
+    /*display: flex;*/
+    /*height: 50vh;*/
+    font-weight: normal;
+    font-size: 8.2vw;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 66%;
+    line-height: 0.9;
+    margin-left: 2%;
+    /*margin-block-end: 8.3vh;*/
+
+}
+
+
+.newClass span:hover {
+    color: #0057ff;
+}
+
+.portfolioLinks span {
     /*margin-left: 1.55%;*/
     text-decoration: none;
     font-family: "RobotoCondensedBold", serif;
     margin-block-end: 0.1vh;
+    /*margin-top: 0.1vh;*/
     margin-right: 2%;
-    line-height: 0.9;
+    /*line-height: 0.9;*/
     color: #353535;
+    display: inline-block;
+    transition: transform .2s;
+    padding: 0;
 }
 
-.portfolioLinks a:hover {
+.portfolioLinks span:hover {
     color: #0057ff;
+    transform: scale(1.02);
+}
+
+.sectionDescription {
+    font-family: "RobotoRegular", serif;
+    font-size: 2vw;
+    width: 60%;
+    line-height: 1.4;
+    margin-top: 2vw;
+    text-transform: none;
+    margin-block-end: 8.3vw;
+    margin-left: 2%;
 }
 
 .portfolioBlock {
@@ -349,19 +391,28 @@ h1 {
 /*}*/
 
 .cvGrid .boroda {
+    /*visibility: hidden;*/
     position: absolute;
-    left: 0;
+    left: 2%;
     width: 74%;
     height: max-content;
     pointer-events: none;
+    transition: transform 2s;
 }
-/*#assistansImage:hover {*/
-    /*content:url("../portfolioimages/assistansfolio.png");*/
-/*}*/
 
-.portfolioImage:hover {
-    left:-20px;
+.boroda {
+    transition: transform 2s;
 }
+.portfolioImage img {
+    transition: transform 2s;
+}
+.portfolioImage img:hover + .boroda{
+    /*left:-20px;*/
+    transition: all 2s;
+    transform: scale(1.1);
+}
+
+portfolioImage:
 
 .custom-block-heading {
     width: 100%;
@@ -428,7 +479,7 @@ h1 {
     /* position: absolute; */
     flex-shrink: 0;
     /* bottom: 0; */
-    height: 3vh;
+    height: 4vh;
     background-color: white;
     width: 100%;
     z-index: 20;
@@ -452,7 +503,8 @@ h1 {
 .cvContent {
     /*position: absolute;*/
     /*top: 100vh;*/
-    width: 100%;
+    width: 98%;
+    margin-left: 2%;
 }
 
 .cvTitle {
@@ -464,7 +516,7 @@ h1 {
     line-height: 0.9;
     color: #353535;
     margin-block-end: 8.3vw;
-    margin-top: 10vw;
+    margin-top: 30vw;
 }
 
 .experienceGrid {
@@ -477,6 +529,12 @@ h1 {
     display: flex;
     flex-direction: row;
     vertical-align: top;
+}
+
+.stickySkills {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cvGrid div {
@@ -534,6 +592,8 @@ h1 {
 
 }
 
+
+
 .experienceSide {
     /*visibility: hidden;*/
     /*display: flex;*/
@@ -541,9 +601,26 @@ h1 {
     position: fixed;
     width: 32vw;
     /*top: 0;*/
+    left: 66%;
     font-family: "RobotoCondensedBold", serif;
     line-height: 0.9;
-    top: 3.5%;
+    top:0;
+    margin-top: 3.5vh;
+    text-transform: uppercase;
+    /* background: white; */
+    z-index: 99;
+}
+
+.educationSide {
+    position: fixed;
+    width: 32vw;
+    left: 66%;
+    /*top: 0;*/
+    font-family: "RobotoCondensedBold", serif;
+    line-height: 0.9;
+    /*top:-100px;*/
+    top:0;
+    margin-top: 3.5vh;
     text-transform: uppercase;
     /* background: white; */
     z-index: 99;
@@ -577,19 +654,19 @@ h1 {
     text-transform: uppercase;
 }
 
-.educationSide {
-    visibility: hidden;
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    width: 33% !important;
-    /*top: 0;*/
-    font-family: "RobotoCondensedBold", serif;
-    line-height: 0.9;
-    left: 66.8%;
-    top: 106.6vw;
-    text-transform: uppercase;
-}
+/*.educationSide {*/
+/*    visibility: hidden;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    position: absolute;*/
+/*    width: 33% !important;*/
+/*    !*top: 0;*!*/
+/*    font-family: "RobotoCondensedBold", serif;*/
+/*    line-height: 0.9;*/
+/*    left: 66.8%;*/
+/*    top: 106.6vw;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
 .experienceSideTitle {
     font-family: "RobotoCondensedBold", serif;

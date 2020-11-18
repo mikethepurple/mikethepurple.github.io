@@ -36,7 +36,7 @@ function App() {
           />
         </div>
         <div
-          onClick={() => window.open("/portfolio", "_self")}
+          onClick={() => window.open("/something", "_self")}
           className="heading"
         >
           <Heading

@@ -27,32 +27,33 @@ function App() {
       <div className="scrollRibbon heading">
         <Heading headingFirst="SCROLL " size="3vh" speed="30" />
       </div>
-      <div className="pageHeadings">
-        <div onClick={() => window.open("/cv", "_self")} className="heading">
-          <Heading
-            headingFirst="CURRICULUM VITAE  "
-            size="32vh"
-            speed="30"
-          />
-        </div>
-        <div onClick={() => window.open("/cv", "_self")} className="heading">
-          <Heading
-            headingFirst="SAVE AS PDF  "
-            size="22vh"
-            speed="13"
-          />
-        </div>
-        <div
-          onClick={() => window.open("/portfolio", "_self")}
-          className="heading"
-        >
-          <Heading
-            headingFirst="SHARE WITH SOMEONE ELSE  "
-            size="16.5vh"
-            speed="20"
-          />
-        </div>
-      </div>
+
+      {/*<div className="pageHeadings">*/}
+      {/*  <div onClick={() => window.open("/cv", "_self")} className="heading">*/}
+      {/*    <Heading*/}
+      {/*      headingFirst="CURRICULUM VITAE  "*/}
+      {/*      size="32vh"*/}
+      {/*      speed="30"*/}
+      {/*    />*/}
+      {/*  </div>*/}
+      {/*  <div onClick={() => window.open("/cv", "_self")} className="heading">*/}
+      {/*    <Heading*/}
+      {/*      headingFirst="SAVE AS PDF  "*/}
+      {/*      size="22vh"*/}
+      {/*      speed="13"*/}
+      {/*    />*/}
+      {/*  </div>*/}
+      {/*  <div*/}
+      {/*    onClick={() => window.open("/portfolio", "_self")}*/}
+      {/*    className="heading"*/}
+      {/*  >*/}
+      {/*    <Heading*/}
+      {/*      headingFirst="SHARE WITH SOMEONE ELSE  "*/}
+      {/*      size="16.5vh"*/}
+      {/*      speed="20"*/}
+      {/*    />*/}
+      {/*  </div>*/}
+      {/*</div>*/}
       <div className="cvContent">
         <p className="cvTitle">Experience</p>
         <div className="cvWrapper">

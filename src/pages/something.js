@@ -66,32 +66,130 @@ function App() {
       <div className="scrollRibbon heading">
         <Heading headingFirst="SCROLL " size="3vh" speed="30" />
       </div>
-      <div className="portfolioLinks">
-        <a onClick={() => setType("ALL")} href="#copy">
-          <span aria-label="ALL"></span>
-          ALL
-        </a>
-        <a onClick={() => setType("STRATEGY")} href="#copy">
-          <span role="img" aria-label="STRATEGY"></span>
-          STRATEGY
-        </a>
-        <a onClick={() => setType("PRODUCT")} href="#copy">
-          <span role="img" aria-label="PRODUCT"></span>
-          PRODUCT
-        </a>
-        <a onClick={() => setType("UX")} href="#copy">
-          <span role="img" aria-label="UX"></span>
-          UX
-        </a>
-      </div>
 
+      {/*<div className="menuHint">*/}
+      {/*  <Heading headingFirst="Click on a filter to choose a theme" size="2vh" speed="10" />*/}
+      {/*</div>*/}
+
+      <div className="portfolioLinks">
+        {
+          (type == "ALL") ? (
+            <span
+              style={{ color: "#0057ff", transform: "scale(1.03)" }}>ALL</span>
+          ) : (
+            <span onClick={() => setType("ALL")}>ALL</span>
+          )
+        }
+        {
+          (type == "STRATEGY") ? (
+            <span
+              style={{ color: "#0057ff", transform: "scale(1.03)" }}>STRATEGY</span>
+          ) : (
+            <span onClick={() => setType("STRATEGY")}>STRATEGY</span>
+          )
+        }
+        {
+          (type == "DESIGN") ? (
+            <span
+              style={{ color: "#0057ff", transform: "scale(1.03)" }}>DESIGN</span>
+          ) : (
+            <span onClick={() => setType("DESIGN")}>DESIGN</span>
+          )
+        }
+        {
+          (type == "PRODUCT") ? (
+            <span
+              style={{ color: "#0057ff", transform: "scale(1.03)" }}>PRODUCT</span>
+          ) : (
+            <span onClick={() => setType("PRODUCT")}>PRODUCT</span>
+          )
+        }
+      </div>
+      {/*<div className="menuHint"><p>Click on a filter to choose a theme</p> </div>*/}
+      {
+        (type == "DESIGN") ? (
+          <div className="sectionDescription">
+            <p>For a Designer I have quite a complicated relationship with Design. I'm all up for deep understanding of
+              human behaviour. I'm also a big fan of "good enough" and pick experimentation over preparation any
+              day. <span
+                style={{ fontFamily: "RobotoBold" }}>Design for me is a way of thinking rather than a craft. </span>
+            </p>
+          </div>
+        ) : null
+      }
+      {
+        (type == "ALL") ? (
+          <div className="sectionDescription">
+            <p>I’m a product designer and strategist focusing on working with startups. Everything I do falls into
+              Strategy, Design and Product; any given project usually ticks off two of the three. <span
+                style={{ fontFamily: "RobotoBold" }}> Feel free to explore the projects below or click on a topic to filter them by. </span>
+            </p>
+          </div>
+        ) : null
+      }
+      {
+        (type == "PRODUCT") ? (
+          <div className="sectionDescription">
+            <p>Product is where I mostly apply my creative thinking. Over the years I’ve spoken to, consulted and worked
+              with a large number of startups operating in various industries. <span
+                style={{ fontFamily: "RobotoBold" }}>I don't believe in anything until it's
+                built.</span></p>
+          </div>
+        ) : null
+      }
+      {
+        (type == "STRATEGY") ? (
+          <div className="sectionDescription">
+            <p>Strategy is where it's all started for me. I've worked as a Strategist back in the ad business, I
+              tend to
+              focus on strategic aspects when doing Design. Execution is key but <span
+                style={{ fontFamily: "RobotoBold" }}> before you go execute your vision, you need to make sure that your vision makes sense.</span>
+            </p>
+          </div>
+        ) : null
+      }
 
       <div className="cvContent">
         {/*<p className="cvTitle">Experience</p>*/}
         <StickyContainer className="cvWrapper">
           <div className="cvGrid">
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+              (type == "PRODUCT" || type == "ALL" || type == "DESIGN") ? (
+                <div className="portfolioImage"
+
+                >
+                  <img src={eyezontumb}
+                       onMouseOver={() => setEyezonShown(true)}
+                       onMouseLeave={() => setEyezonShown(false)} />
+                  {
+                    eyezonShown ? (
+                      <div className="boroda" id="borodaEyezon">
+                        <img src={eyezonfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
+                <div className="portfolioImage"
+                >
+                  <img src={dstumb}
+                       onMouseEnter={() => setDsShown(true)}
+                       onMouseLeave={() => setDsShown(false)} />
+                  {
+                    dsShown ? (
+                      <div className="boroda">
+                        <img src={dsfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -110,7 +208,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "UX") ? (
+              (type == "STRATEGY" || type == "ALL" || type == "DESIGN") ? (
                 <div className="portfolioImage"
                      id="assistansImage"
 
@@ -128,43 +226,16 @@ function App() {
                 </div>
               ) : null
             }
-            <div className="portfolioImage"
-            >
-              <img src={dstumb}
-                   onMouseEnter={() => setDsShown(true)}
-                   onMouseLeave={() => setDsShown(false)} />
-              {
-                dsShown ? (
-                  <div className="boroda">
-                    <img src={dsfolio} />
-                  </div>
-                ) : null
-              }
-            </div>
-            <div className="portfolioImage">
-              <img src={undotumb}
-                   onMouseEnter={() => setUndoShown(true)}
-                   onMouseLeave={() => setUndoShown(false)} />
-              {
-                undoShown ? (
-                  <div className="boroda">
-                    <img src={undofolio} />
-                  </div>
-                ) : null
-              }
-            </div>
             {
-              (type == "STRATEGY" || type == "ALL" || type == "UX") ? (
-                <div className="portfolioImage"
-
-                >
-                  <img src={eyezontumb}
-                       onMouseOver={() => setEyezonShown(true)}
-                       onMouseLeave={() => setEyezonShown(false)} />
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
+                <div className="portfolioImage">
+                  <img src={undotumb}
+                       onMouseEnter={() => setUndoShown(true)}
+                       onMouseLeave={() => setUndoShown(false)} />
                   {
-                    eyezonShown ? (
+                    undoShown ? (
                       <div className="boroda">
-                        <img src={eyezonfolio} />
+                        <img src={undofolio} />
                       </div>
                     ) : null
                   }
@@ -172,7 +243,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "UX") ? (
+              (type == "ALL" || type == "DESIGN") ? (
                 <div className="portfolioImage"
 
                 >
@@ -190,7 +261,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -209,7 +280,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -228,7 +299,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -248,7 +319,7 @@ function App() {
             }
 
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "UX") ? (
+              (type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -298,140 +369,191 @@ function App() {
             )}
           </Sticky>
 
-          <StyledSide className="experienceSide" show={eyezonShown}>
-            <div className="experienceHead">
-              <img src={six} alt={"logo"} />
-              <p className="experienceSideTitle">DIGITAL STRATEGIST</p>
-              <p className="experienceSideSub">
-                2010-2017
-                <br />
-                <br />
-                Creative strategy, Creative concepting, art-direction, SMM,
-                copywriting, client management, coaching, lecturing
-              </p>
-            </div>
-            <div className="experienceText">
-              <p>
-                Last place of work in the ad business – Publicis Media (part of
-                the French Publicis Groupe,was responsible for establishing a
-                creative unit in the media counterpart of Publicis.
-                <br />
-                <br />
-                Helped the team grow from 2 to 9 and the agency got into the Top
-                10 in "Digital Creative" category of the biggest Russian
-                industry rating
-              </p>
-            </div>
-          </StyledSide>
-          <StyledSide className="experienceSide" show={assistansShown}>
-            <div className="experienceHead">
-              <img src={looi} alt={"Looi's Logo"} />
-              <p className="experienceSideTitle">PRODUCT OWNER</p>
-              <p className="experienceSideSub">
-                2019-2020
-                <br />
-                <br />
-                DESIGN, PROJECT MANAGEMENT, CLIENT RELATIONSHIPS, BUSINESS
-                DEVELOPMENT
-              </p>
-            </div>
-            <div className="experienceText">
-              <p>
-                Joined one of the first Product Design studios in Russia, am
-                involved in various projects with both corporate and startup
-                clients, focusing on client relationships, product strategy and
-                design, hypotheses testing and process facilitation
-              </p>
-            </div>
-          </StyledSide>
-          <StyledSide className="experienceSide" show={undoShown}>
-            <div className="experienceHead">
-              <img src={undo} alt={"undo design logo"} />
-              <p className="experienceSideTitle">FOUNDER</p>
-              <p className="experienceSideSub">
-                2016-CURRENT
-                <br />
-                <br />
-                FOUNDER, DESIGN, PRODUCT & MANAGEMENT
-              </p>
-            </div>
-            <div className="experienceText">
-              <p>
-                Started a boutique design studio focused on working with
-                early-stage startups.
-                <br />
-                <br />
-                Over the years I’ve spoken to, consulted and worked with a large
-                number of startups operating in various industries, helping them
-                with all sorts of things: from UI and web design fixes, to
-                product strategy and branding
-              </p>
-            </div>
-          </StyledSide>
-          <StyledSide className="experienceSide" show={gzShown}>
-            <div className="experienceHead">
-              <img src={freelance} alt={"logos of the random companies I freelanced for"} />
-              <p className="experienceSideTitle">DESIGNER, STRATEGIST</p>
-              <p className="experienceSideSub">
-                MY WHOLE LIFE
-                <br />
-                <br />
-                PROJECT MANAGEMENT, UX DESIGN, PRODUCT DESIGN, PRODUCT STRATEGY,
-                BUSINESS STRATEGY, CREATIVE, USER RESEARCH
-              </p>
-            </div>
-            <div className="experienceText">
-              <p>
-                Freelanced since 2010 with a focus on tech startups. (in
-                addition to strategy and design work for companies like
-                Mövenpick, Castorama, Yandex).
-                <br />
-                <br />
-                Afte moving to Sweden in 2017 continued doing work in Product
-                Design & Development for clients like Vimla, TrainBrain, Habity,
-                BT.CX, Assistans För Dig.
-              </p>
-            </div>
-          </StyledSide>
-          <StyledSide className="experienceSide" show={dsShown}>
-            <div className="experienceHead">
-              <img src={btcx} alt={"BTCX logo"} />
-              <p className="experienceSideTitle">DESIGNER, STRATEGIST</p>
-              <p className="experienceSideSub">
-                2017-2018
-                <br />
-                <br />
-                DESIGN, STRATEGY, RESEARCH, STAKEHOLDER MANAGEMENT
-              </p>
-            </div>
-            <div className="experienceText">
-              <p>
-                In 2017 joined BT.CX, a swedish crypto startup.
-                <br /> <br /> Worked closely with the Engineering teams as the
-                only Product Designer, delivering small UI and UX fixes as well
-                as a full redesign of the app and the platform
-              </p>
-            </div>
-          </StyledSide>
+          <Sticky>
+            {({
+                style = {
+                  position: "fixed",
+                },
+              }) => (
+              <div style={style}>
+                <StyledSide className="experienceSide" show={eyezonShown}>
+                  <div className="experienceHead">
+                    <img src={six} alt={"logo"} />
+                    <p className="experienceSideTitle">DIGITAL STRATEGIST</p>
+                    <p className="experienceSideSub">
+                      2010-2017
+                      <br />
+                      <br />
+                      Creative strategy, Creative concepting, art-direction, SMM,
+                      copywriting, client management, coaching, lecturing
+                    </p>
+                  </div>
+                  <div className="experienceText">
+                    <p>
+                      Last place of work in the ad business – Publicis Media (part of
+                      the French Publicis Groupe,was responsible for establishing a
+                      creative unit in the media counterpart of Publicis.
+                      <br />
+                      <br />
+                      Helped the team grow from 2 to 9 and the agency got into the Top
+                      10 in "Digital Creative" category of the biggest Russian
+                      industry rating
+                    </p>
+                  </div>
+                </StyledSide>
+              </div>)}
+          </Sticky>
+
+          <Sticky>
+            {({
+                style = {
+                  position: "fixed",
+                },
+              }) => (
+              <div style={style}>
+                <StyledSide className="experienceSide" show={assistansShown}>
+                  <div className="experienceHead">
+                    <img src={looi} alt={"Looi's Logo"} />
+                    <p className="experienceSideTitle">PRODUCT OWNER</p>
+                    <p className="experienceSideSub">
+                      2019-2020
+                      <br />
+                      <br />
+                      DESIGN, PROJECT MANAGEMENT, CLIENT RELATIONSHIPS, BUSINESS
+                      DEVELOPMENT
+                    </p>
+                  </div>
+                  <div className="experienceText">
+                    <p>
+                      Joined one of the first Product Design studios in Russia, am
+                      involved in various projects with both corporate and startup
+                      clients, focusing on client relationships, product strategy and
+                      design, hypotheses testing and process facilitation
+                    </p>
+                  </div>
+                </StyledSide>
+              </div>)}
+          </Sticky>
+
+          <Sticky>
+            {({
+                style = {
+                  position: "fixed",
+                },
+              }) => (
+              <div style={style}>
+                <StyledSide className="experienceSide" show={undoShown}>
+                  <div className="experienceHead">
+                    <img src={undo} alt={"undo design logo"} />
+                    <p className="experienceSideTitle">FOUNDER</p>
+                    <p className="experienceSideSub">
+                      2016-CURRENT
+                      <br />
+                      <br />
+                      FOUNDER, DESIGN, PRODUCT & MANAGEMENT
+                    </p>
+                  </div>
+                  <div className="experienceText">
+                    <p>
+                      Started a boutique design studio focused on working with
+                      early-stage startups.
+                      <br />
+                      <br />
+                      Over the years I’ve spoken to, consulted and worked with a large
+                      number of startups operating in various industries, helping them
+                      with all sorts of things: from UI and web design fixes, to
+                      product strategy and branding
+                    </p>
+                  </div>
+                </StyledSide>
+              </div>)}
+          </Sticky>
+          <Sticky>
+            {({
+                style = {
+                  position: "fixed",
+                },
+              }) => (
+              <div style={style}>
+                <StyledSide className="experienceSide" show={gzShown}>
+                  <div className="experienceHead">
+                    <img src={freelance} alt={"logos of the random companies I freelanced for"} />
+                    <p className="experienceSideTitle">DESIGNER, STRATEGIST</p>
+                    <p className="experienceSideSub">
+                      MY WHOLE LIFE
+                      <br />
+                      <br />
+                      PROJECT MANAGEMENT, UX DESIGN, PRODUCT DESIGN, PRODUCT STRATEGY,
+                      BUSINESS STRATEGY, CREATIVE, USER RESEARCH
+                    </p>
+                  </div>
+                  <div className="experienceText">
+                    <p>
+                      Freelanced since 2010 with a focus on tech startups. (in
+                      addition to strategy and design work for companies like
+                      Mövenpick, Castorama, Yandex).
+                      <br />
+                      <br />
+                      Afte moving to Sweden in 2017 continued doing work in Product
+                      Design & Development for clients like Vimla, TrainBrain, Habity,
+                      BT.CX, Assistans För Dig.
+                    </p>
+                  </div>
+                </StyledSide>
+              </div>)}
+          </Sticky>
+          <Sticky>
+            {({
+                style = {
+                  position: "fixed",
+                },
+              }) => (
+              <div style={style}>
+                <StyledSide className="experienceSide" show={dsShown}>
+                  <div className="experienceHead">
+                    <img src={btcx} alt={"BTCX logo"} />
+                    <p className="experienceSideTitle">DESIGNER, STRATEGIST</p>
+                    <p className="experienceSideSub">
+                      2017-2018
+                      <br />
+                      <br />
+                      DESIGN, STRATEGY, RESEARCH, STAKEHOLDER MANAGEMENT
+                    </p>
+                  </div>
+                  <div className="experienceText">
+                    <p>
+                      In 2017 joined BT.CX, a swedish crypto startup.
+                      <br /> <br /> Worked closely with the Engineering teams as the
+                      only Product Designer, delivering small UI and UX fixes as well
+                      as a full redesign of the app and the platform
+                    </p>
+                  </div>
+                </StyledSide>
+              </div>)}
+          </Sticky>
 
         </StickyContainer>
-        <p className="cvTitle">Education</p>
-        <div className="cvWrapper">
-          <div className="cvGrid">
-            <div
-              onMouseOver={() => setSeShown(true)}
-              onMouseLeave={() => setSeShown(false)}
-            >
-              <p>Software Engineering</p>
+        <StickyContainer className="StickySkills">
+          <p className="cvTitle">Education</p>
+          <div className="cvWrapper">
+            <div className="cvGrid">
+              <div
+                onMouseOver={() => setSeShown(true)}
+                onMouseLeave={() => setSeShown(false)}
+              >
+                <p>Software Engineering</p>
+              </div>
+              <div
+                onMouseOver={() => setHyperShown(true)}
+                onMouseLeave={() => setHyperShown(false)}
+              >
+                <p>Hyper Island</p>
+              </div>
             </div>
-            <div
-              onMouseOver={() => setHyperShown(true)}
-              onMouseLeave={() => setHyperShown(false)}
-            >
-              <p>Hyper Island</p>
-            </div>
+
           </div>
-          <StyledSide className="experienceSide" show={seShown}>
+
+          <StyledSide className="educationSide" show={seShown}>
             <div className="experienceHead">
               <img src={hse} alt={"hse logo"} />
               <p className="experienceSideTitle">SOFTWARE ENGINEERING</p>
@@ -452,7 +574,9 @@ function App() {
               </p>
             </div>
           </StyledSide>
-          <StyledSide className="experienceSide" show={hyperShown}>
+
+
+          <StyledSide className="educationSide" show={hyperShown}>
             <div className="experienceHead">
               <img src={hyper} alt={"Hyper Island's logo"} />
               <p className="experienceSideTitle">DIGITAL MEDIA CREATIVE</p>
@@ -477,7 +601,8 @@ function App() {
               </p>
             </div>
           </StyledSide>
-        </div>
+
+        </StickyContainer>
         <div className="skillHeadline">
           <div className="skillGrid">
             <div className="skillTitle">
@@ -530,10 +655,12 @@ function App() {
                 <p>UI ANIMATION</p>
               </div>
             </div>
-            <div className="scrollCheat" />
+
           </div>
         </div>
+
       </div>
+      <div className="scrollCheat" />
     </div>
   )
 }
