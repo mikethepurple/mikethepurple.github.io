@@ -172,7 +172,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
+              (type == "STRATEGY") ? (
                 <div className="portfolioImage"
                 >
                   <img src={dstumb}
@@ -181,6 +181,23 @@ function App() {
                   {
                     dsShown ? (
                       <div className="boroda">
+                        <img src={dsfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              (type == "ALL" || type == "PRODUCT") ? (
+                <div className="portfolioImage"
+                >
+                  <img src={dstumb}
+                       onMouseEnter={() => setDsShown(true)}
+                       onMouseLeave={() => setDsShown(false)} />
+                  {
+                    dsShown ? (
+                      <div className="borodaRight">
                         <img src={dsfolio} />
                       </div>
                     ) : null

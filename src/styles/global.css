@@ -363,6 +363,10 @@ h1 {
     width: 100%;
 }
 
+/*.portfolioImage{*/
+/*    position: relative;*/
+/*}*/
+
 .portfolioImage img {
     display: inline-block;
     width: 80% !important;
@@ -390,29 +394,54 @@ h1 {
     /*content:url("../portfolioimages/gigwayfolio.png");*/
 /*}*/
 
+
+
+.cvGrid .borodaRight {
+    /*visibility: hidden;*/
+    position: absolute;
+
+    width: 72.1%;
+    right: 40.3%;
+    height: max-content;
+    pointer-events: none;
+    text-align: right;
+}
+
+/*.borodaRight img {*/
+/*    position: absolute;*/
+/*    right: 25%;*/
+/*}*/
+
+.portfolioImage img:hover + .borodaRight{
+    animation-name: borodation;
+    animation-duration: 0.2s;
+}
+
+
+/*.borodaleft {}*/
+
 .cvGrid .boroda {
     /*visibility: hidden;*/
     position: absolute;
     left: 2%;
-    width: 74%;
+    width: 72.1%;
     height: max-content;
     pointer-events: none;
-    transition: transform 2s;
 }
 
-.boroda {
-    transition: transform 2s;
-}
-.portfolioImage img {
-    transition: transform 2s;
-}
 .portfolioImage img:hover + .boroda{
-    /*left:-20px;*/
-    transition: all 2s;
-    transform: scale(1.1);
+    animation-name: borodation;
+    animation-duration: 0.2s;
+}
+@keyframes borodation {
+    from {width: 0}
+    to {width: 72.5%}
 }
 
-portfolioImage:
+
+
+
+
 
 .custom-block-heading {
     width: 100%;
