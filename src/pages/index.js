@@ -20,13 +20,21 @@ function App() {
         crossorigin="anonymous"
       />
       <div className="mainContent">
-        <div onClick={() => window.open("/cv", "_self")} className="heading">
+        <div  className="heading">
           <Heading
             className="heading"
             headingFirst=" HELLO, MY NAME IS MISHA "
             size="32vh"
             speed="16"
           />
+        </div>
+        <div className="portfolioTitle heading overlayText">
+          <Heading
+            headingFirst={"LINKEDIN B" }
+            size="32vh"
+            speed="24"
+          >
+          </Heading>
         </div>
         <div onClick={() => window.open("/cv", "_self")} className="heading">
           <Heading

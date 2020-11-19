@@ -2,6 +2,7 @@ import React from "react"
 import Topmenu from "../components/topmenu"
 import { useState } from "react"
 import { StickyContainer, Sticky } from "react-sticky"
+import LazyLoad from "react-lazyload"
 // import Sticky from "react-stickynode"
 import StickyBox from "react-sticky-box/dist/esnext"
 
@@ -163,9 +164,11 @@ function App() {
                        onMouseLeave={() => setEyezonShown(false)} />
                   {
                     eyezonShown ? (
+
                       <div className="boroda" id="borodaEyezon">
                         <img src={eyezonfolio} />
                       </div>
+
                     ) : null
                   }
                 </div>
@@ -206,7 +209,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
+              (type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -225,7 +228,26 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "DESIGN") ? (
+              (type == "STRATEGY" || type == "DESIGN") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={gigwaytumb}
+                       onMouseEnter={() => setGigwayShown(true)}
+                       onMouseLeave={() => setGigwayShown(false)} />
+                  {
+                    gigwayShown ? (
+                      <div className="borodaRight">
+                        <img src={gigwayfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "DESIGN") ? (
                 <div className="portfolioImage"
                      id="assistansImage"
 
@@ -244,7 +266,26 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
+              (type == "ALL" ) ? (
+                <div className="portfolioImage"
+                     id="assistansImage"
+
+                >
+                  <img src={assistanstumb}
+                       onMouseEnter={() => setAssistansShown(true)}
+                       onMouseLeave={() => setAssistansShown(false)} />
+                  {
+                    assistansShown ? (
+                      <div className="borodaRight">
+                        <img src={assistansfolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              ( type == "ALL" ) ? (
                 <div className="portfolioImage">
                   <img src={undotumb}
                        onMouseEnter={() => setUndoShown(true)}
@@ -252,6 +293,22 @@ function App() {
                   {
                     undoShown ? (
                       <div className="boroda">
+                        <img src={undofolio} />
+                      </div>
+                    ) : null
+                  }
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "PRODUCT") ? (
+                <div className="portfolioImage">
+                  <img src={undotumb}
+                       onMouseEnter={() => setUndoShown(true)}
+                       onMouseLeave={() => setUndoShown(false)} />
+                  {
+                    undoShown ? (
+                      <div className="borodaRight">
                         <img src={undofolio} />
                       </div>
                     ) : null
@@ -269,7 +326,7 @@ function App() {
                        onMouseLeave={() => setGzShown(false)} />
                   {
                     gzShown ? (
-                      <div className="boroda">
+                      <div className="borodaRight">
                         <img src={gzfolio} />
                       </div>
                     ) : null
@@ -306,7 +363,7 @@ function App() {
                        onMouseLeave={() => setFlaconShown(false)} />
                   {
                     flaconShown ? (
-                      <div className="boroda">
+                      <div className="borodaRight">
                         <img src={flaconfolio} />
                       </div>
                     ) : null
@@ -316,7 +373,7 @@ function App() {
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" ) ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -334,9 +391,27 @@ function App() {
                 </div>
               ) : null
             }
-
             {
-              (type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
+              (type == "DESIGN") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={kicktumb}
+                       onMouseEnter={() => setKickShown(true)}
+                       onMouseLeave={() => setKickShown(false)} />
+                  {
+                    kickShown ? (
+                      <div className="borodaRight">
+                        <img src={kickfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+            {
+              (type == "DESIGN") ? (
                 <div className="portfolioImage"
                   // id="gigwayImage"
                 >
@@ -346,6 +421,25 @@ function App() {
                   {
                     portalShown ? (
                       <div className="boroda">
+                        <img src={portalfolio} />
+                      </div>
+                    ) : null
+                  }
+
+                </div>
+              ) : null
+            }
+            {
+              (type == "ALL" || type == "PRODUCT") ? (
+                <div className="portfolioImage"
+                  // id="gigwayImage"
+                >
+                  <img src={portaltumb}
+                       onMouseEnter={() => setPortalShown(true)}
+                       onMouseLeave={() => setPortalShown(false)} />
+                  {
+                    portalShown ? (
+                      <div className="borodaRight">
                         <img src={portalfolio} />
                       </div>
                     ) : null
