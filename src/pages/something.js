@@ -1,10 +1,8 @@
-import React from "react"
+import React, { Suspense } from "react"
 import Topmenu from "../components/topmenu"
 import { useState } from "react"
 import { StickyContainer, Sticky } from "react-sticky"
-import LazyLoad from "react-lazyload"
-// import Sticky from "react-stickynode"
-import StickyBox from "react-sticky-box/dist/esnext"
+import LazyLoad from 'react-lazyload';
 
 import six from "../cvimages/adv.png"
 import looi from "../cvimages/looi.png"
@@ -39,7 +37,6 @@ import eyezonfolio from "../portfolioimages/eyezonfolio.png"
 
 import { StyledSide } from "../components/cv.styled"
 import Heading from "../components/headings"
-import PortfolioBlock from "../components/portfolioblock"
 
 function App() {
   const [eyezonShown, setEyezonShown] = useState(false)
@@ -156,14 +153,15 @@ function App() {
           <div className="cvGrid">
             {
               (type == "PRODUCT" || type == "ALL" || type == "DESIGN") ? (
-                <div className="portfolioImage"
+                <div className="portfolioImage">
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={eyezontumb}
+                      onMouseOver={() => setEyezonShown(true)}
+                      onMouseLeave={() => setEyezonShown(false)}
+                    />
+                  </LazyLoad>
 
-                >
-                  <img
-                    src={eyezontumb}
-                    onMouseOver={() => setEyezonShown(true)}
-                    onMouseLeave={() => setEyezonShown(false)}
-                  />
                   <div className="boroda" id="borodaEyezon">
                     <img src={eyezonfolio} />
                   </div>
@@ -172,13 +170,14 @@ function App() {
             }
             {
               (type == "STRATEGY") ? (
-                <div className="portfolioImage"
-                >
-                  <img
-                    src={dstumb}
-                    onMouseEnter={() => setDsShown(true)}
-                    onMouseLeave={() => setDsShown(false)}
-                  />
+                <div className="portfolioImage">
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={dstumb}
+                      onMouseEnter={() => setDsShown(true)}
+                      onMouseLeave={() => setDsShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={dsfolio} />
                   </div>
@@ -189,11 +188,14 @@ function App() {
               (type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage"
                 >
-                  <img
-                    src={dstumb}
-                    onMouseEnter={() => setDsShown(true)}
-                    onMouseLeave={() => setDsShown(false)}
-                  />
+
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={dstumb}
+                      onMouseEnter={() => setDsShown(true)}
+                      onMouseLeave={() => setDsShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={dsfolio} />
                   </div>
@@ -203,11 +205,13 @@ function App() {
             {
               (type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={gigwaytumb}
-                    onMouseEnter={() => setGigwayShown(true)}
-                    onMouseLeave={() => setGigwayShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={gigwaytumb}
+                      onMouseEnter={() => setDsShown(true)}
+                      onMouseLeave={() => setDsShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={gigwayfolio} />
                   </div>
@@ -217,11 +221,13 @@ function App() {
             {
               (type == "STRATEGY" || type == "DESIGN") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={gigwaytumb}
-                    onMouseEnter={() => setGigwayShown(true)}
-                    onMouseLeave={() => setGigwayShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={gigwaytumb}
+                      onMouseEnter={() => setGigwayShown(true)}
+                      onMouseLeave={() => setGigwayShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={gigwayfolio} />
                   </div>
@@ -231,11 +237,13 @@ function App() {
             {
               (type == "STRATEGY" || type == "DESIGN") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={assistanstumb}
-                    onMouseEnter={() => setAssistansShown(true)}
-                    onMouseLeave={() => setAssistansShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={assistanstumb}
+                      onMouseEnter={() => setAssistansShown(true)}
+                      onMouseLeave={() => setAssistansShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={assistansfolio} />
                   </div>
@@ -245,11 +253,14 @@ function App() {
             {
               (type == "ALL") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={assistanstumb}
-                    onMouseEnter={() => setAssistansShown(true)}
-                    onMouseLeave={() => setAssistansShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={assistanstumb}
+                      onMouseEnter={() => setAssistansShown(true)}
+                      onMouseLeave={() => setAssistansShown(false)}
+                    />
+                  </LazyLoad>
+
                   <div className="borodaRight">
                     <img src={assistansfolio} />
                   </div>
@@ -259,11 +270,13 @@ function App() {
             {
               (type == "ALL") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={undotumb}
-                    onMouseEnter={() => setUndoShown(true)}
-                    onMouseLeave={() => setUndoShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={undotumb}
+                      onMouseEnter={() => setUndoShown(true)}
+                      onMouseLeave={() => setUndoShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={undofolio} />
                   </div>
@@ -273,11 +286,13 @@ function App() {
             {
               (type == "STRATEGY" || type == "PRODUCT") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={undotumb}
-                    onMouseEnter={() => setUndoShown(true)}
-                    onMouseLeave={() => setUndoShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={undotumb}
+                      onMouseEnter={() => setUndoShown(true)}
+                      onMouseLeave={() => setUndoShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={undofolio} />
                   </div>
@@ -287,11 +302,13 @@ function App() {
             {
               (type == "ALL" || type == "DESIGN") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={gztumb}
-                    onMouseOver={() => setGzShown(true)}
-                    onMouseLeave={() => setGzShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={gztumb}
+                      onMouseOver={() => setGzShown(true)}
+                      onMouseLeave={() => setGzShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={gzfolio} />
                   </div>
@@ -301,11 +318,13 @@ function App() {
             {
               (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={tbtumb}
-                    onMouseEnter={() => setTbShown(true)}
-                    onMouseLeave={() => setTbShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={tbtumb}
+                      onMouseEnter={() => setTbShown(true)}
+                      onMouseLeave={() => setTbShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={tbfolio} />
                   </div>
@@ -315,10 +334,13 @@ function App() {
             {
               (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={flacontumb}
-                    onMouseEnter={() => setFlaconShown(true)}
-                    onMouseLeave={() => setFlaconShown(false)} />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={flacontumb}
+                      onMouseEnter={() => setFlaconShown(true)}
+                      onMouseLeave={() => setFlaconShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={flaconfolio} />
                   </div>
@@ -328,11 +350,13 @@ function App() {
             {
               (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={kicktumb}
-                    onMouseEnter={() => setKickShown(true)}
-                    onMouseLeave={() => setKickShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={kicktumb}
+                      onMouseEnter={() => setKickShown(true)}
+                      onMouseLeave={() => setKickShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={kickfolio} />
                   </div>
@@ -342,11 +366,13 @@ function App() {
             {
               (type == "DESIGN") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={kicktumb}
-                    onMouseEnter={() => setKickShown(true)}
-                    onMouseLeave={() => setKickShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={kicktumb}
+                      onMouseEnter={() => setKickShown(true)}
+                      onMouseLeave={() => setKickShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={kickfolio} />
                   </div>
@@ -357,11 +383,13 @@ function App() {
             {
               (type == "DESIGN") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={portaltumb}
-                    onMouseEnter={() => setPortalShown(true)}
-                    onMouseLeave={() => setPortalShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={portaltumb}
+                      onMouseEnter={() => setPortalShown(true)}
+                      onMouseLeave={() => setPortalShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="boroda">
                     <img src={portalfolio} />
                   </div>
@@ -371,11 +399,13 @@ function App() {
             {
               (type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage">
-                  <img
-                    src={portaltumb}
-                    onMouseEnter={() => setPortalShown(true)}
-                    onMouseLeave={() => setPortalShown(false)}
-                  />
+                  <LazyLoad once style={{width: '100%'}}>
+                    <img
+                      src={portaltumb}
+                      onMouseEnter={() => setPortalShown(true)}
+                      onMouseLeave={() => setPortalShown(false)}
+                    />
+                  </LazyLoad>
                   <div className="borodaRight">
                     <img src={portalfolio} />
                   </div>

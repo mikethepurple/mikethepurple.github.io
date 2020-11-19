@@ -406,7 +406,7 @@ h1 {
     text-align: right;
 }
 
-.portfolioImage img:hover + .borodaRight{
+.portfolioImage .lazyload-wrapper:hover + .borodaRight{
     display: inline-block;
     position: absolute;
     animation-name: borodation;
@@ -422,7 +422,7 @@ h1 {
     pointer-events: none;
 }
 
-.portfolioImage img:hover + .boroda{
+.portfolioImage .lazyload-wrapper:hover + .boroda{
     display: inline-block;
     position: absolute;
     animation-name: borodation;
@@ -432,11 +432,6 @@ h1 {
     from {width: 0}
     to {width: 72.5%}
 }
-
-
-
-
-
 
 .custom-block-heading {
     width: 100%;
