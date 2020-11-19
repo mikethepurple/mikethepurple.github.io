@@ -397,9 +397,8 @@ h1 {
 
 
 .cvGrid .borodaRight {
-    /*visibility: hidden;*/
+    display: none;
     position: absolute;
-
     width: 72.1%;
     right: 40.3%;
     height: max-content;
@@ -407,21 +406,15 @@ h1 {
     text-align: right;
 }
 
-/*.borodaRight img {*/
-/*    position: absolute;*/
-/*    right: 25%;*/
-/*}*/
-
 .portfolioImage img:hover + .borodaRight{
+    display: inline-block;
+    position: absolute;
     animation-name: borodation;
     animation-duration: 0.2s;
 }
 
-
-/*.borodaleft {}*/
-
 .cvGrid .boroda {
-    /*visibility: hidden;*/
+    display: none;
     position: absolute;
     left: 2%;
     width: 72.1%;
@@ -430,6 +423,8 @@ h1 {
 }
 
 .portfolioImage img:hover + .boroda{
+    display: inline-block;
+    position: absolute;
     animation-name: borodation;
     animation-duration: 0.1s;
 }

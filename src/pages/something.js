@@ -159,18 +159,14 @@ function App() {
                 <div className="portfolioImage"
 
                 >
-                  <img src={eyezontumb}
-                       onMouseOver={() => setEyezonShown(true)}
-                       onMouseLeave={() => setEyezonShown(false)} />
-                  {
-                    eyezonShown ? (
-
-                      <div className="boroda" id="borodaEyezon">
-                        <img src={eyezonfolio} />
-                      </div>
-
-                    ) : null
-                  }
+                  <img
+                    src={eyezontumb}
+                    onMouseOver={() => setEyezonShown(true)}
+                    onMouseLeave={() => setEyezonShown(false)}
+                  />
+                  <div className="boroda" id="borodaEyezon">
+                    <img src={eyezonfolio} />
+                  </div>
                 </div>
               ) : null
             }
@@ -178,16 +174,14 @@ function App() {
               (type == "STRATEGY") ? (
                 <div className="portfolioImage"
                 >
-                  <img src={dstumb}
-                       onMouseEnter={() => setDsShown(true)}
-                       onMouseLeave={() => setDsShown(false)} />
-                  {
-                    dsShown ? (
-                      <div className="boroda">
-                        <img src={dsfolio} />
-                      </div>
-                    ) : null
-                  }
+                  <img
+                    src={dstumb}
+                    onMouseEnter={() => setDsShown(true)}
+                    onMouseLeave={() => setDsShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={dsfolio} />
+                  </div>
                 </div>
               ) : null
             }
@@ -195,256 +189,196 @@ function App() {
               (type == "ALL" || type == "PRODUCT") ? (
                 <div className="portfolioImage"
                 >
-                  <img src={dstumb}
-                       onMouseEnter={() => setDsShown(true)}
-                       onMouseLeave={() => setDsShown(false)} />
-                  {
-                    dsShown ? (
-                      <div className="borodaRight">
-                        <img src={dsfolio} />
-                      </div>
-                    ) : null
-                  }
+                  <img
+                    src={dstumb}
+                    onMouseEnter={() => setDsShown(true)}
+                    onMouseLeave={() => setDsShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={dsfolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "ALL" || type == "PRODUCT") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={gigwaytumb}
-                       onMouseEnter={() => setGigwayShown(true)}
-                       onMouseLeave={() => setGigwayShown(false)} />
-                  {
-                    gigwayShown ? (
-                      <div className="boroda">
-                        <img src={gigwayfolio} />
-                      </div>
-                    ) : null
-                  }
-
-                </div>
-              ) : null
-            }
-            {
-              (type == "STRATEGY" || type == "DESIGN") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={gigwaytumb}
-                       onMouseEnter={() => setGigwayShown(true)}
-                       onMouseLeave={() => setGigwayShown(false)} />
-                  {
-                    gigwayShown ? (
-                      <div className="borodaRight">
-                        <img src={gigwayfolio} />
-                      </div>
-                    ) : null
-                  }
-
-                </div>
-              ) : null
-            }
-            {
-              (type == "STRATEGY" || type == "DESIGN") ? (
-                <div className="portfolioImage"
-                     id="assistansImage"
-
-                >
-                  <img src={assistanstumb}
-                       onMouseEnter={() => setAssistansShown(true)}
-                       onMouseLeave={() => setAssistansShown(false)} />
-                  {
-                    assistansShown ? (
-                      <div className="boroda">
-                        <img src={assistansfolio} />
-                      </div>
-                    ) : null
-                  }
-                </div>
-              ) : null
-            }
-            {
-              (type == "ALL" ) ? (
-                <div className="portfolioImage"
-                     id="assistansImage"
-
-                >
-                  <img src={assistanstumb}
-                       onMouseEnter={() => setAssistansShown(true)}
-                       onMouseLeave={() => setAssistansShown(false)} />
-                  {
-                    assistansShown ? (
-                      <div className="borodaRight">
-                        <img src={assistansfolio} />
-                      </div>
-                    ) : null
-                  }
-                </div>
-              ) : null
-            }
-            {
-              ( type == "ALL" ) ? (
                 <div className="portfolioImage">
-                  <img src={undotumb}
-                       onMouseEnter={() => setUndoShown(true)}
-                       onMouseLeave={() => setUndoShown(false)} />
-                  {
-                    undoShown ? (
-                      <div className="boroda">
-                        <img src={undofolio} />
-                      </div>
-                    ) : null
-                  }
+                  <img
+                    src={gigwaytumb}
+                    onMouseEnter={() => setGigwayShown(true)}
+                    onMouseLeave={() => setGigwayShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={gigwayfolio} />
+                  </div>
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "DESIGN") ? (
+                <div className="portfolioImage">
+                  <img
+                    src={gigwaytumb}
+                    onMouseEnter={() => setGigwayShown(true)}
+                    onMouseLeave={() => setGigwayShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={gigwayfolio} />
+                  </div>
+                </div>
+              ) : null
+            }
+            {
+              (type == "STRATEGY" || type == "DESIGN") ? (
+                <div className="portfolioImage">
+                  <img
+                    src={assistanstumb}
+                    onMouseEnter={() => setAssistansShown(true)}
+                    onMouseLeave={() => setAssistansShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={assistansfolio} />
+                  </div>
+                </div>
+              ) : null
+            }
+            {
+              (type == "ALL") ? (
+                <div className="portfolioImage">
+                  <img
+                    src={assistanstumb}
+                    onMouseEnter={() => setAssistansShown(true)}
+                    onMouseLeave={() => setAssistansShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={assistansfolio} />
+                  </div>
+                </div>
+              ) : null
+            }
+            {
+              (type == "ALL") ? (
+                <div className="portfolioImage">
+                  <img
+                    src={undotumb}
+                    onMouseEnter={() => setUndoShown(true)}
+                    onMouseLeave={() => setUndoShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={undofolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "STRATEGY" || type == "PRODUCT") ? (
                 <div className="portfolioImage">
-                  <img src={undotumb}
-                       onMouseEnter={() => setUndoShown(true)}
-                       onMouseLeave={() => setUndoShown(false)} />
-                  {
-                    undoShown ? (
-                      <div className="borodaRight">
-                        <img src={undofolio} />
-                      </div>
-                    ) : null
-                  }
+                  <img
+                    src={undotumb}
+                    onMouseEnter={() => setUndoShown(true)}
+                    onMouseLeave={() => setUndoShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={undofolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "ALL" || type == "DESIGN") ? (
-                <div className="portfolioImage"
-
-                >
-                  <img src={gztumb}
-                       onMouseOver={() => setGzShown(true)}
-                       onMouseLeave={() => setGzShown(false)} />
-                  {
-                    gzShown ? (
-                      <div className="borodaRight">
-                        <img src={gzfolio} />
-                      </div>
-                    ) : null
-                  }
+                <div className="portfolioImage">
+                  <img
+                    src={gztumb}
+                    onMouseOver={() => setGzShown(true)}
+                    onMouseLeave={() => setGzShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={gzfolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" || type == "DESIGN") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={tbtumb}
-                       onMouseEnter={() => setTbShown(true)}
-                       onMouseLeave={() => setTbShown(false)} />
-                  {
-                    tbShown ? (
-                      <div className="boroda">
-                        <img src={tbfolio} />
-                      </div>
-                    ) : null
-                  }
-
+                <div className="portfolioImage">
+                  <img
+                    src={tbtumb}
+                    onMouseEnter={() => setTbShown(true)}
+                    onMouseLeave={() => setTbShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={tbfolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={flacontumb}
-                       onMouseEnter={() => setFlaconShown(true)}
-                       onMouseLeave={() => setFlaconShown(false)} />
-                  {
-                    flaconShown ? (
-                      <div className="borodaRight">
-                        <img src={flaconfolio} />
-                      </div>
-                    ) : null
-                  }
-
+                <div className="portfolioImage">
+                  <img
+                    src={flacontumb}
+                    onMouseEnter={() => setFlaconShown(true)}
+                    onMouseLeave={() => setFlaconShown(false)} />
+                  <div className="borodaRight">
+                    <img src={flaconfolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
-              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT" ) ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={kicktumb}
-                       onMouseEnter={() => setKickShown(true)}
-                       onMouseLeave={() => setKickShown(false)} />
-                  {
-                    kickShown ? (
-                      <div className="boroda">
-                        <img src={kickfolio} />
-                      </div>
-                    ) : null
-                  }
-
+              (type == "STRATEGY" || type == "ALL" || type == "PRODUCT") ? (
+                <div className="portfolioImage">
+                  <img
+                    src={kicktumb}
+                    onMouseEnter={() => setKickShown(true)}
+                    onMouseLeave={() => setKickShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={kickfolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "DESIGN") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={kicktumb}
-                       onMouseEnter={() => setKickShown(true)}
-                       onMouseLeave={() => setKickShown(false)} />
-                  {
-                    kickShown ? (
-                      <div className="borodaRight">
-                        <img src={kickfolio} />
-                      </div>
-                    ) : null
+                <div className="portfolioImage">
+                  <img
+                    src={kicktumb}
+                    onMouseEnter={() => setKickShown(true)}
+                    onMouseLeave={() => setKickShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={kickfolio} />
+                  </div>
                   }
-
                 </div>
               ) : null
             }
             {
               (type == "DESIGN") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={portaltumb}
-                       onMouseEnter={() => setPortalShown(true)}
-                       onMouseLeave={() => setPortalShown(false)} />
-                  {
-                    portalShown ? (
-                      <div className="boroda">
-                        <img src={portalfolio} />
-                      </div>
-                    ) : null
-                  }
-
+                <div className="portfolioImage">
+                  <img
+                    src={portaltumb}
+                    onMouseEnter={() => setPortalShown(true)}
+                    onMouseLeave={() => setPortalShown(false)}
+                  />
+                  <div className="boroda">
+                    <img src={portalfolio} />
+                  </div>
                 </div>
               ) : null
             }
             {
               (type == "ALL" || type == "PRODUCT") ? (
-                <div className="portfolioImage"
-                  // id="gigwayImage"
-                >
-                  <img src={portaltumb}
-                       onMouseEnter={() => setPortalShown(true)}
-                       onMouseLeave={() => setPortalShown(false)} />
-                  {
-                    portalShown ? (
-                      <div className="borodaRight">
-                        <img src={portalfolio} />
-                      </div>
-                    ) : null
-                  }
-
+                <div className="portfolioImage">
+                  <img
+                    src={portaltumb}
+                    onMouseEnter={() => setPortalShown(true)}
+                    onMouseLeave={() => setPortalShown(false)}
+                  />
+                  <div className="borodaRight">
+                    <img src={portalfolio} />
+                  </div>
                 </div>
               ) : null
             }
